@@ -1,0 +1,87 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 203px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            padding-top: 16px;
+        }
+
+            .sidebar a {
+                padding: 10px 14px 10px 10px;
+                text-decoration: none;
+                font-size: 18px;
+                color: white;
+                display: block;
+            }
+
+                .sidebar a:hover {
+                    color: #0094ff;
+                }
+
+        .main {
+            margin-left: 200px; /* Same as the width of the sidenav */
+            padding: 0px 10px;
+        }
+
+        @@media screen and (max-height: 450px) {
+            .sidebar {
+                padding-top: 15px;
+            }
+
+                .sidebar a {
+                    font-size: 18px;
+                }
+        }
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <div class="sidebar">
+       
+        <a href="#home"><i class="glyphicon glyphicon-home"></i> Anasayfa</a>
+        <a href="#home"><i class="glyphicon glyphicon-list"></i> Kategoriler</a>
+        <a href="#home"><i class="glyphicon glyphicon-book"></i> Kitaplar</a>
+        <a href="#home"><i class="glyphicon glyphicon-pencil"></i> Yazarlar</a>
+        <a href="#home"><i class="glyphicon glyphicon-user"></i> Üyeler</a>
+        <a href="#home"><i class="glyphicon glyphicon-tower"></i> Personeller</a>
+        <a href="#home"><i class="	glyphicon glyphicon-circle-arrow-right"></i> Ödünç Kitap Ver</a>
+        <a href="#home"><i class="	glyphicon glyphicon-circle-arrow-left"></i> Ödünç Kitap Al</a>
+        <a href="#home"><i class="glyphicon glyphicon-euro"></i> Kasa</a>
+        <a href="#home"><i class="glyphicon glyphicon-dashboard"></i> İşlemler</a>
+        <a href="#home"><i class="glyphicon glyphicon-cog"></i> Ayarlar</a>
+        <a href="#home"><i class="glyphicon glyphicon-phone"></i> Yardım</a>
+        <a href="#home"><i class="glyphicon glyphicon-remove-sign"></i> Çıkış</a>
+        
+    </div>
+
+    <div class="main">
+        @RenderBody()
+    @*sayfa içerisindeki değişen kısım*@
+    </div>
+ 
+</body>
+</html>
