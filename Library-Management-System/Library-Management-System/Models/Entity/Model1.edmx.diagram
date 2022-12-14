@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="13cbda3c1cf34fc493210592088b6f79" Name="Diagram1">
+        <EntityTypeShape EntityType="devrimme_senaModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="devrimme_senaModel.Author" Width="1.5" PointX="1.5" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="devrimme_senaModel.Book" Width="1.5" PointX="1.5" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="devrimme_senaModel.Category" Width="1.5" PointX="1.5" PointY="18.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="devrimme_senaModel.Employee" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="devrimme_senaModel.Member" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="devrimme_senaModel.Movement" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="devrimme_senaModel.Punishment" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="devrimme_senaModel.Till" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="devrimme_senaModel.FK_Book_Author" ManuallyRouted="false" />
+        <AssociationConnector Association="devrimme_senaModel.FK_Book_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="devrimme_senaModel.FK_Movement_Book" ManuallyRouted="false" />
+        <AssociationConnector Association="devrimme_senaModel.FK_Punishment_Member" ManuallyRouted="false" />
+        <AssociationConnector Association="devrimme_senaModel.FK_Punishment_Member1" ManuallyRouted="false" />
+        <AssociationConnector Association="devrimme_senaModel.FK_Punishment_Movement" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -74,7 +74,7 @@
           <Property Name="Member_Id" Type="int" />
           <Property Name="Employee_Id" Type="int" />
           <Property Name="StartDate" Type="smalldatetime" />
-          <Property Name="FinisDate" Type="smalldatetime" />
+          <Property Name="FinishDate" Type="smalldatetime" />
         </EntityType>
         <EntityType Name="Punishment">
           <Key>
@@ -314,7 +314,7 @@
           <Property Name="Member_Id" Type="Int32" />
           <Property Name="Employee_Id" Type="Int32" />
           <Property Name="StartDate" Type="DateTime" Precision="0" />
-          <Property Name="FinisDate" Type="DateTime" Precision="0" />
+          <Property Name="FinishDate" Type="DateTime" Precision="0" />
           <NavigationProperty Name="Book" Relationship="Self.FK_Movement_Book" FromRole="Movement" ToRole="Book" />
           <NavigationProperty Name="Punishment" Relationship="Self.FK_Punishment_Movement" FromRole="Movement" ToRole="Punishment" />
         </EntityType>
@@ -568,7 +568,7 @@
                 <ScalarProperty Name="Member_Id" ColumnName="Member_Id" />
                 <ScalarProperty Name="Employee_Id" ColumnName="Employee_Id" />
                 <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-                <ScalarProperty Name="FinisDate" ColumnName="FinisDate" />
+                <ScalarProperty Name="FinishDate" ColumnName="FinishDate" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
