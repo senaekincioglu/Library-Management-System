@@ -1,0 +1,30 @@
+﻿@using Library_Management_System.Models.Entity @*oluşturduğun projeyi model ile birlikte yani sql de oluşturduğun tabloları proje ile birleştirmek için yazılır. ve her controllera ait işlemlerde yaz
+    MODELİN İÇERİSİNDE BULUNAN DEĞERLERE ULAŞMAKTIR *@
+@model  List<Category>
+@*oluşturduğun modeli yani sql den çektiğin tablolardan categoriyi listeleyeceğin için yazıldı
+    model tanımlanır ve tabloya ulaşılır ve liste şeklinde tutulur.*@
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Kategoriler</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>KATEGORİ ID</th>
+        <th>KATEGORİ ADI</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+    </tr>
+    @foreach (var ktg in Model)
+    {
+       <tr>
+           <td>@ktg.Id</td>
+           <td>@ktg.Name</td>
+           <td><a href="/Category/DeleteCategory/@ktg.Id" class="btn btn-danger">Sil</a></td>
+           <td> <a href="/Category/BringCategory/@ktg.Id" class="btn btn-success">Güncelle</a></td>
+       </tr>
+    }
+</table>
+<a href="/Category/AddCategory/" class="btn btn-primary">Yeni Kategori Ekle</a>
+
