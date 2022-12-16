@@ -25,7 +25,7 @@ namespace Library_Management_System.Controllers
         { 
             db.Category.Add(p);
             db.SaveChanges();
-            return View();
+            return RedirectToAction ("Index");
         }
     }
 }
