@@ -243,6 +243,7 @@
     <Content Include="Views\Category\BringCategory.cshtml" />
     <Content Include="Views\Category\DeleteCategory.cshtml" />
     <Content Include="Views\Author\Index.cshtml" />
+    <Content Include="Views\Author\AddAuthor.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
