@@ -34,12 +34,13 @@ namespace Library_Management_System.Controllers
             var category = db.Category.Find(id);//find bul demek.
             db.Category.Remove(category); 
             db.SaveChanges();
-            return RedirectToAction("AddCategory");//BAŞKA SAYFAYA YÖNLENDİRİR.
+            return RedirectToAction("Index");//BAŞKA SAYFAYA YÖNLENDİRİR.
         }
-        //public ActionResult BringCategory(int id) //id ye göre parametre getirecek.
-        //{
-        //    return
-        //}
+        public ActionResult BringCategory(int id) //id ye göre parametre getirecek.
+        {
+            var ktg = db.Category.Find(id);
+            return View("BringCategory", ktg);
+        }
 
     }
 }
