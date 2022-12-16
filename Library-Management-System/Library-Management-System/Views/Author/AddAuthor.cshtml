@@ -1,0 +1,28 @@
+﻿@model Library_Management_System.Models.Entity.Author
+@{
+    ViewBag.Title = "AddAuthor";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Yazarlar</h2>
+
+<form class="form-group" method="post">
+    <div></div>
+    <div style="margin-top:15px">
+        <label>Yazar Adı</label>
+        @Html.TextBoxFor(y => y.Name, new { @class = "form-control" })@* inputta name kısmı yanlışlıkla giriliyor olabilir. o yüzden linq sorguları kullanılır ve böyle kullanılır. ve input type text yazmak yerine direkt textboxfor yazılması daha mantıklı ve daha yenidir.new yazılıp devamının gelmesi ise formun şeklinin daha güzel olması için.*@
+    </div>
+    <div style="margin-top:15px">
+        <label>Yazar Soyadı</label>
+        @Html.TextBoxFor(y => y.Surname, new { @class = "form-control" })
+    </div>
+
+    <div style="margin-top:15px">
+        <label>Yazar Detay Bilgileri</label>
+        @Html.TextAreaFor(y => y.Detail, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info">Yazar Ekle</button>
+    </div>
+
+</form>
