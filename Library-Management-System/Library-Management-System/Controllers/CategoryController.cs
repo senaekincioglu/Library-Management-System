@@ -27,7 +27,7 @@ namespace Library_Management_System.Controllers
         {
             db.Category.Add(p);// kategori tablosuna eklesin kategoriye eklenen değerleri
             db.SaveChanges();
-            return View();//ne yazdıysan sadece onu gösterir.
+            return RedirectToAction("Index");//ne yazdıysan sadece onu gösterir.
         }
         public ActionResult DeleteCategory(int id) //parametre id olacak çünkü id ye göre silme işlemi gerçekleştirecek.
         {
@@ -40,6 +40,13 @@ namespace Library_Management_System.Controllers
         {
             var ktg = db.Category.Find(id);
             return View("BringCategory", ktg);
+        }
+        public ActionResult Update (Category p )
+        {
+            var ktg = db.Category.Find(p.Id);
+            ktg.Name=p.Name;
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
     }
