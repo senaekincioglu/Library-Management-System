@@ -1,0 +1,29 @@
+﻿@using Library_Management_System.Models.Entity
+@model List<Author>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>YAZARLAR</h2>
+<table class="table table-bordered">
+    <tr>
+        
+        <th>Id</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Detail</th>
+    </tr>
+    @foreach(var y in Model)
+            {
+             <tr>
+                 <td>@y.Id</td>
+                 <td>@y.Name</td>
+                 <td>@y.Surname</td>
+                 <td>@y.Detail</td>
+             </tr>
+            }
+
+
+</table>
+<a href="#" class="btn btn-primary">Yeni Yazar Ekle</a>
