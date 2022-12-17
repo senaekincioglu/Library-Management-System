@@ -40,5 +40,14 @@ namespace Library_Management_System.Controllers
             var yzr = db.Author.Find(id);
             return View("BringAuthor", yzr);
         }
+        public ActionResult UpdateAuthor(Author p)
+        {
+            var yzr = db.Author.Find(p.Id);
+             yzr.Name = p.Name;
+            yzr.Surname = p.Surname;
+            yzr.Detail = p.Detail;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
