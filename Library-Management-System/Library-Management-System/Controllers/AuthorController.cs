@@ -27,5 +27,18 @@ namespace Library_Management_System.Controllers
             db.SaveChanges();
             return RedirectToAction ("Index");
         }
+        public ActionResult DeleteAuthor(int id)
+        {
+            var yazar = db.Author.Find(id);
+            db.Author.Remove(yazar);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult BringAuthor(int id)
+        {
+            var yzr = db.Author.Find(id);
+            return View("BringAuthor", yzr);
+        }
     }
 }

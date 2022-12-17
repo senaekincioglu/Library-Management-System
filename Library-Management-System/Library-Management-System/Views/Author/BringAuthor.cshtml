@@ -1,0 +1,14 @@
+﻿@model Library_Management_System.Models.Entity.Author
+@{
+    ViewBag.Title = "BringAuthor";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+
+@using (Html.BeginForm("UpdateAuthor", "Author",FormMethod.Post))
+            {
+                <div class="form-group">
+                    <label>Yazar Id</label>
+                    @Html.TextBoxFor(y => y.Id, new {@class="form-control"})
+                </div>
+            }

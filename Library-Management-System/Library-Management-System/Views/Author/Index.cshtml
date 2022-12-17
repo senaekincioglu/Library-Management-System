@@ -13,6 +13,8 @@
         <th>Name</th>
         <th>Surname</th>
         <th>Detail</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
     </tr>
     @foreach(var y in Model)
             {
@@ -21,6 +23,8 @@
                  <td>@y.Name</td>
                  <td>@y.Surname</td>
                  <td>@y.Detail</td>
+                 <td>@Html.ActionLink("Sil","DeleteAuthor",new {id=y.Id},new {@class="btn btn-danger",onclick="return confirm ('Silmek İstiyor Musunuz?')"})</td>
+                 <td><a href="/Author/BringAuthor/@y.Id" class="btn btn-success">Güncelle</a></td>
              </tr>
             }
 
