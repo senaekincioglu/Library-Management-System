@@ -21,9 +21,9 @@ namespace Library_Management_System.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult AddAuthor(Category p) 
+        public ActionResult AddAuthor(Author p) 
         { 
-            db.Category.Add(p);
+            db.Author.Add(p);
             db.SaveChanges();
             return RedirectToAction ("Index");
         }
