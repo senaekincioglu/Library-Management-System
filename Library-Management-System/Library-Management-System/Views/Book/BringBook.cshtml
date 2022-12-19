@@ -1,0 +1,44 @@
+﻿@model Library_Management_System.Models.Entity.Book
+@{
+    ViewBag.Title = "BringBook";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("UpdateBook", "Book", FormMethod.Post))
+{
+    <div style="margin-bottom:15px"></div>
+    <div class="form-group">
+        <div style="margin-bottom:15px">
+            <label>Kitap Id</label>
+            @Html.TextBoxFor(k => k.Id, new { @class = "form-control" })
+        </div>
+        <div style="margin-bottom:15px">
+            <label>Kitap Adı</label>
+            @Html.TextBoxFor(k => k.Name, new { @class = "form-control" })
+        </div>
+        <div style="margin-bottom:15px">
+            <label>Kategori</label>
+            @Html.DropDownListFor(k => k.Category.Id, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+        </div>
+        <div style="margin-bottom:15px">
+            <label>Yazarı</label>
+            @Html.DropDownListFor(k => k.Author.Id, (List<SelectListItem>)ViewBag.dgr2, new { @class = "form-control" })
+        </div>
+        <div style="margin-bottom:15px">
+            <label>Basım Yılı</label>
+            @Html.TextBoxFor(k => k.PrintYear, new { @class = "form-control" })
+        </div>
+        <div style="margin-bottom:15px">
+            <label>Yayınevi</label>
+            @Html.TextBoxFor(k => k.Publisher, new { @class = "form-control" })
+        </div>
+        <div style="margin-bottom:15px">
+            <label>Sayfa Sayısı</label>
+            @Html.TextBoxFor(k => k.Page, new { @class = "form-control" })
+        </div>
+
+        <button class="btn btn-warning">Yazar Bilgilerini Güncelle</button>
+    </div>
+}
+
+

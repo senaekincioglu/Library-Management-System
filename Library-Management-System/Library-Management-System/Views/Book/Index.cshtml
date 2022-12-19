@@ -6,39 +6,44 @@
 }
 
 <h2>Kitap Sayfası</h2>
-<div style="margin-bottom:15px">
-    <input  type="text" class="form-control" placeholder="aranacak kitabı giriniz..."/>
-</div>
+@using (Html.BeginForm("Index", "Book", FormMethod.Get))
+{
+    <div style="margin-bottom:15px">
+        <b>Aranacak Kitap Adını Girin: &nbsp </b>
+        @Html.TextBox("p")
+        <input type="submit" value="Ara" />
+    </div>
+}
 
 <table class="table table-bordered">
- <tr>
-     <th>ID</th>
-     <th>Kitap Adı</th>
-     <th>Kitap Yazarı</th>
-     <th>Kategorisi</th>
-     <th>Basım Yılı</th>
-     <th>Yayınevi</th>
-     <th>Sayfa</th>
-     <th>Durum</th>
-     <th>Sil</th>
-     <th>Güncelle</th>
- </tr>  
-    @foreach(var k in Model)
-            {
-                <tr>
-                    <td>@k.Id</td>
-                    <td>@k.Name</td>
+    <tr>
+        <th>ID</th>
+        <th>Kitap Adı</th>
+        <th>Kitap Yazarı</th>
+        <th>Kategorisi</th>
+        <th>Basım Yılı</th>
+        <th>Yayınevi</th>
+        <th>Sayfa</th>
+        <th>Durum</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var k in Model)
+    {
+        <tr>
+            <td>@k.Id</td>
+            <td>@k.Name</td>
 
-                    <td>@k.Author.Name&nbsp @k.Author.Surname</td>
-                    <td>@k.Category.Name</td>
-                    <td>@k.PrintYear</td>
-                    <td>@k.Publisher</td>
-                    <td>@k.Page</td>
-                    <td>@k.Status</td>
-                    <td><a href="/Book/DeleteBook/@k.Id" class="btn btn-danger">Sil</a></td>
-                    <td><a href="/Book/BringBook/@k.Id" class="btn btn-success">Güncelle</a></td>
+            <td>@k.Author.Name&nbsp @k.Author.Surname</td>
+            <td>@k.Category.Name</td>
+            <td>@k.PrintYear</td>
+            <td>@k.Publisher</td>
+            <td>@k.Page</td>
+            <td>@k.Status</td>
+            <td><a href="/Book/DeleteBook/@k.Id" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Book/BringBook/@k.Id" class="btn btn-success">Güncelle</a></td>
 
-                </tr>
-            }
+        </tr>
+    }
 </table>
 <a href="/Book/AddBook/" class="btn btn-primary">Yeni Kitap Ekle</a>
