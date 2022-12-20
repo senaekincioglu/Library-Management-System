@@ -49,7 +49,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Employee" Type="varchar" MaxLength="50" />
+          <Property Name="Employees" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Member">
           <Key>
@@ -287,7 +287,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Employee1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Employees" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Member">
           <Key>
@@ -541,7 +541,7 @@
             <EntityTypeMapping TypeName="devrimme_senaModel.Employee">
               <MappingFragment StoreEntitySet="Employee">
                 <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Employee1" ColumnName="Employee" />
+                <ScalarProperty Name="Employees" ColumnName="Employees" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
