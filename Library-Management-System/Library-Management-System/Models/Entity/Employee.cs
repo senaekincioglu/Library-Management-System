@@ -15,6 +15,9 @@ namespace Library_Management_System.Models.Entity
     public partial class Employee
     {
         public byte Id { get; set; }
-        public string Employee1 { get; set; }
+        //reguired kýsýtlama demektir. personel kýsmý boþ geçilemez. eðer boþ geçilirse personel adý boþ geçilemez hatasý vericek. DataAnnotations
+
+        [Reguired(ErrorMessage="Personel Adý Boþ Geçilemez")]
+        public  string  Employees { get; set; }
     }
 }
