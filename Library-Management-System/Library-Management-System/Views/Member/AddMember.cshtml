@@ -1,0 +1,31 @@
+﻿@model Library_Management_System.Models.Entity.Member
+@{
+    ViewBag.Title = "AddMember";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div></div>
+    <div style="margin-top:15px">
+
+    </div>
+    <div>
+        <label>Üye Adı</label>
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Name, "", new { @style = "color:red" })
+
+        @*<input type="text" class="form-control" name="Employees" required />*@
+
+    </div>
+    <div>
+        <label>Üye Soyadı</label>
+        @Html.TextBoxFor(x => x.Surname, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Surname, "", new { @style = "color:red" })
+
+        @*<input type="text" class="form-control" name="Employees" required />*@
+
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info" id="Btn1">Personel Ekle</button>
+    </div>
+</form>
