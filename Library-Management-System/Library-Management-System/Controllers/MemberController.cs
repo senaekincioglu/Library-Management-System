@@ -16,5 +16,22 @@ namespace Library_Management_System.Controllers
             var degerler = db.Member.ToList();
             return View(degerler);
         }
+        [HttpGet]
+        public ActionResult AddMember()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AddMember(Member p)
+        {
+            if (!ModelState.IsValid) //eğer boşsa bunu yapıyor.
+            {
+                return View("AddMember");
+            }
+            db.Member.Add(p);//sağlandıysa bu işlemler gerçekleştirsin.
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
+
 }
