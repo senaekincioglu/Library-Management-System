@@ -1,5 +1,7 @@
 ﻿@using Library_Management_System.Models.Entity
-@model List<Member>
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Member>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/Layout.cshtml";
@@ -36,4 +38,5 @@
         </tr>
     }
 </table>
+@Html.PagedListPager((IPagedList)Model,sayfa=>Url.Action("Index",new {sayfa}))
 <a href="/Member/AddMember/" class="btn btn-primary">Yeni Üye Ekle</a>
