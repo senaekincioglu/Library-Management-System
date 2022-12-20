@@ -25,7 +25,52 @@
         @*<input type="text" class="form-control" name="Employees" required />*@
 
     </div>
+    <div>
+        <label>Mail Adresi</label>
+        @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Mail, "", new { @style = "color:red" })
+
+        @*<input type="text" class="form-control" name="Employees" required />*@
+
+    </div>
+    <div>
+        <label>Kullanıcı Adı</label>
+        @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.UserName, "", new { @style = "color:red" })
+
+        @*<input type="text" class="form-control" name="Employees" required />*@
+
+    </div>
+    <div>
+        <label>Şifre</label>
+        @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Password, "", new { @style = "color:red" })
+
+        @*<input type="text" class="form-control" name="Employees" required />*@
+
+    </div>
+    <div>
+        <label>Fotoğraf Linki</label>
+        @Html.TextBoxFor(x => x.Photograph, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Photograph, "", new { @style = "color:red" })
+
+
+    </div>
+    <div>
+        <label>Telefon</label>
+        @Html.TextBoxFor(x => x.Telephone, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Telephone, "", new { @style = "color:red" })
+
+      
+    </div>
+    <div>
+        <label>Okul</label>
+        @Html.TextBoxFor(x => x.School, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.School, "", new { @style = "color:red" })
+
+
+    </div>
     <div style="margin-top:15px">
-        <button class="btn btn-info" id="Btn1">Personel Ekle</button>
+        <button class="btn btn-info" id="Btn1">Üye Ekle</button>
     </div>
 </form>
