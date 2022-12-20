@@ -1,0 +1,29 @@
+﻿@model Library_Management_System.Models.Entity.Movement
+@{
+    ViewBag.Title = "LendMe";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div></div>
+    <div style="margin-top:15px">
+        <label>Üye ID</label>
+        @Html.TextBoxFor(k => k.Member_Id, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Kitap ID</label>
+        @Html.TextBoxFor(k => k.Book_Id, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Personel ID</label>
+        @Html.TextBoxFor(k => k.Employee_Id, new { @class = "form-control" })
+    </div>
+
+
+
+    <div style="margin-top:15px">
+        <button class="btn btn-group" style="background-color:#a330b5;color:white">Kitabı Ödünç Ver</button>
+    </div>
+
+</form>
+      
