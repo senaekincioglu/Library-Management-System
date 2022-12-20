@@ -257,6 +257,7 @@
     <Content Include="Views\Employee\AddEmployee.cshtml" />
     <Content Include="Views\Employee\BringEmployee.cshtml" />
     <Content Include="Views\Member\Index.cshtml" />
+    <Content Include="Views\Member\AddMember.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
