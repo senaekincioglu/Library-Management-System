@@ -133,6 +133,7 @@
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MemberController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -172,6 +173,8 @@
     <Compile Include="Models\Entity\Punishment.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Entity\ReguiredAttribute.cs" />
+    <Compile Include="Models\Entity\requiredAttribute.cs" />
     <Compile Include="Models\Entity\sp_helpdiagramdefinition_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -251,6 +254,9 @@
     <Content Include="Views\Book\AddBook.cshtml" />
     <Content Include="Views\Book\BringBook.cshtml" />
     <Content Include="Views\Employee\Index.cshtml" />
+    <Content Include="Views\Employee\AddEmployee.cshtml" />
+    <Content Include="Views\Employee\BringEmployee.cshtml" />
+    <Content Include="Views\Member\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
