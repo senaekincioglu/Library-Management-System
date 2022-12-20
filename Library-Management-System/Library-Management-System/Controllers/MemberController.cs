@@ -35,6 +35,32 @@ namespace Library_Management_System.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult DeleteMember(int id) 
+        {
+            var uye = db.Member.Find(id);
+            db.Member.Remove(uye);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        public ActionResult BringMember(int id)
+        {
+            var uye = db.Member.Find(id);
+            return View("BringMember", uye);
+        }
+        public ActionResult UpdateMember(Member p)
+        {
+            var uye = db.Member.Find(p.Id);
+            uye.Name = p.Name;
+            uye.Surname = p.Surname;
+            uye.Mail = p.Mail;
+            uye.UserName = p.UserName;
+            uye.Password = p.Password;
+            uye.School = p.School;
+            uye.Telephone = p.Telephone;
+            uye.Photograph = p.Photograph;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 
 }
