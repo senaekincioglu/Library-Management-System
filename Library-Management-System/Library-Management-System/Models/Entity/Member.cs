@@ -11,7 +11,8 @@ namespace Library_Management_System.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Member
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,10 +23,13 @@ namespace Library_Management_System.Models.Entity
         }
     
         public int Id { get; set; }
+        [Required(ErrorMessage ="Adý Boþ Geçemezsiniz")]
+        [StringLength(20,ErrorMessage ="En fazla 20 karakter girebilirsiniz")]
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Mail { get; set; }
         public string UserName { get; set; }
+        [StringLength(10, ErrorMessage = "En fazla 10 karakter girebilirsiniz")]
         public string Password { get; set; }
         public string Photograph { get; set; }
         public string Telephone { get; set; }
