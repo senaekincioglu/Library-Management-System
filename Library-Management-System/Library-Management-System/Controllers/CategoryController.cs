@@ -41,7 +41,7 @@ namespace Library_Management_System.Controllers
             var ktg = db.Category.Find(id);
             return View("BringCategory", ktg);
         }
-        public ActionResult Update (Category p )
+        public ActionResult UpdateCategory (Category p )
         {
             var ktg = db.Category.Find(p.Id);
             ktg.Name=p.Name;
