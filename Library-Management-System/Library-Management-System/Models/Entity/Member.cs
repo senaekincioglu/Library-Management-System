@@ -27,6 +27,7 @@ namespace Library_Management_System.Models.Entity
         [StringLength(20,ErrorMessage ="En fazla 20 karakter girebilirsiniz")]
         public string Name { get; set; }
         public string Surname { get; set; }
+        //mail formatý
         public string Mail { get; set; }
         public string UserName { get; set; }
         [StringLength(10, ErrorMessage = "En fazla 10 karakter girebilirsiniz")]
