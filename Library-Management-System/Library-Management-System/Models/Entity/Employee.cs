@@ -14,10 +14,16 @@ namespace Library_Management_System.Models.Entity
     
     public partial class Employee
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Employee()
+        {
+            this.Movement = new HashSet<Movement>();
+        }
+    
         public byte Id { get; set; }
-        //reguired kýsýtlama demektir. personel kýsmý boþ geçilemez. eðer boþ geçilirse personel adý boþ geçilemez hatasý vericek. DataAnnotations
-
-        [Reguired(ErrorMessage="Personel Adý Boþ Geçilemez")]
-        public  string  Employees { get; set; }
+        public string Employees { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Movement> Movement { get; set; }
     }
 }

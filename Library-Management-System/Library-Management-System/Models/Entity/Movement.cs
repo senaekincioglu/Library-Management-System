@@ -23,12 +23,14 @@ namespace Library_Management_System.Models.Entity
         public int Id { get; set; }
         public Nullable<int> Book_Id { get; set; }
         public Nullable<int> Member_Id { get; set; }
-        public Nullable<int> Employee_Id { get; set; }
+        public Nullable<byte> Employee_Id { get; set; }
         public Nullable<System.DateTime> StartDate { get; set; }
         public Nullable<System.DateTime> FinishDate { get; set; }
     
-        public virtual Book Book { get; set; }
+        public virtual Employee Employee { get; set; }
+        public virtual Member Member { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Punishment> Punishment { get; set; }
+        public virtual Book Book { get; set; }
     }
 }

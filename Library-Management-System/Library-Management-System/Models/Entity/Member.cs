@@ -11,31 +11,29 @@ namespace Library_Management_System.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Member
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Member()
         {
+            this.Movement = new HashSet<Movement>();
             this.Punishment = new HashSet<Punishment>();
             this.Punishment1 = new HashSet<Punishment>();
         }
     
         public int Id { get; set; }
-        [Required(ErrorMessage ="Adý Boþ Geçemezsiniz")]
-        [StringLength(20,ErrorMessage ="En fazla 20 karakter girebilirsiniz")]
         public string Name { get; set; }
         public string Surname { get; set; }
-        //mail formatý
         public string Mail { get; set; }
         public string UserName { get; set; }
-        [StringLength(10, ErrorMessage = "En fazla 10 karakter girebilirsiniz")]
         public string Password { get; set; }
         public string Photograph { get; set; }
         public string Telephone { get; set; }
         public string School { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Movement> Movement { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Punishment> Punishment { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
