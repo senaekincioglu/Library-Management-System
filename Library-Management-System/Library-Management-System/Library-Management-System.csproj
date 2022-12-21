@@ -268,6 +268,7 @@
     <Content Include="Views\Member\AddMember.cshtml" />
     <Content Include="Views\Member\BringMember.cshtml" />
     <Content Include="Views\Loaned\LendMe.cshtml" />
+    <Content Include="Views\Loaned\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
