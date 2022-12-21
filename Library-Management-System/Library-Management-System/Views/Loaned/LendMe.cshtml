@@ -8,7 +8,7 @@
     <div></div>
     <div style="margin-top:15px">
         <label>Üye ID</label>
-        @Html.TextBoxFor(k => k.Member_Id, new { @class = "form-control" })
+        @Html.TextBoxFor(k => k.Member_Id, new { @class = "form-control" })@*inputta name kısmı mesela unutmuş olabiliyorsun burda otomatik geliyor inputtaki name olayı gibi burda k.memberıd oluyor. veri tabanında da işlem yapması içindir*@
     </div>
     <div style="margin-top:15px">
         <label>Kitap ID</label>
