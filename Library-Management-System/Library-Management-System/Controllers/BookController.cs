@@ -95,6 +95,7 @@ namespace Library_Management_System.Controllers
             kitap.PrintYear=p.PrintYear;
             kitap.Page = p.Page;
             kitap.Publisher = p.Publisher;
+            kitap.Status = true;
             var ktg = db.Category.Where(k => k.Id == p.Category.Id).FirstOrDefault();
             var yzr = db.Author.Where(y => y.Id == p.Author.Id).FirstOrDefault();
             kitap.Category_Id = ktg.Id;

@@ -19,11 +19,6 @@
         <label>Kitap Yazar</label>
         @Html.DropDownListFor(k => k.Author.Id, (List<SelectListItem>)ViewBag.dgr2, new { @class = "form-control" }) 
     </div>
-    <select>
-        <option placeholder>
-            
-        </option>
-    </select>
     <div style="margin-top:15px">
         <label>Basım Yılı</label>
         @Html.TextBoxFor(k => k.PrintYear, new { @class = "form-control" })
@@ -39,5 +34,6 @@
     <div style="margin-top:15px">
         <button class="btn btn-info">Kitap Ekle</button>
     </div>
+  <input type="hidden" name="Status" value="True" />
 
 </form>
