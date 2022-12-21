@@ -23,7 +23,7 @@ namespace Library_Management_System.Controllers
             return View();
         }
         
-        [HttpPost]
+        [HttpPost]//
         public ActionResult LendMe(Movement p) 
         {
             db.Movement.Add(p);
