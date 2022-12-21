@@ -18,6 +18,14 @@
         <label>Personel ID</label>
         @Html.TextBoxFor(k => k.Employee_Id, new { @class = "form-control" })
     </div>
+    <div style="margin-top:15px">
+        <label>Kitap Alış Tarihi</label>
+      <input type="text" class="form-control" name="StartDate" value="@DateTime.Now.ToShortDateString()" /> @*c# kodu olduğu için başına @ koyulur ve şuanın tarihinin kısa halini göster demek.*@
+    </div>
+    <div style="margin-top:15px">
+        <label>Kitap İade Tarihi</label>
+       <input type="text" class="form-control" name="FinishDate"value=" @DateTime.Now.AddDays(7).ToShortDateString() " /> @*şuanın tarihinden 7 gün sonrayı göster demek.*@
+    </div>
 
 
 
