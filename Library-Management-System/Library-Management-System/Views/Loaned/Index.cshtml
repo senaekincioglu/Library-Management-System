@@ -15,22 +15,20 @@
         <th>Personel</th>
         <th>Alış Tarihi</th>
         <th>İade Tarihi</th>
-        <th>Sil</th>
-        <th>Güncelle</th>
+        <th>İade Al</th>
     </tr>
-    @foreach (var k in Model)
+    @foreach(var k in Model)
     {
         <tr>
             <td>@k.Id</td>
-            <td>@k.Book_Id</td>
-
-            <td>@k.Member_Id</td>
-            <td>@k.Employee_Id</td>
-            <td>@k.StartDate</td>
-            <td>@k.FinishDate</td>
-            <td><a href="/Book/DeleteBook/@k.Id" class="btn btn-default" style="background-color:#ff6a00">Kitabı İade Et</a></td>
+            <td>@k.Book.Name</td>
+            <td>@k.Member.Name&nbsp @k.Member.Surname</td>
+            <td>@k.Employee.Employees</td>
+            <td>@Convert.ToDateTime(k.StartDate).ToString("dd/MM/yyyy")</td>
+            <td>@Convert.ToDateTime(k.FinishDate).ToString("dd/MM/yyyy")</td>
+            <td><a href="/Loaned/LoanReturn/@k.Id" class="btn btn-default" style="background-color:#64d8ca;color:white">Kitabı İade Et</a></td>
         </tr>
     }
 </table>
-<a href="/Book/AddBook/" class="btn btn-primary">Yeni Kitap Ekle</a>
+
 

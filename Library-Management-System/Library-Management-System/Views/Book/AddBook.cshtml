@@ -12,13 +12,18 @@
     </div>
     <div style="margin-top:15px">
         <label>Kitap Kategori</label>
-        @Html.DropDownListFor(k=>k.Category.Id,(List<SelectListItem>)ViewBag.dgr1,new {@class="form-control"})
+        @Html.DropDownListFor(k => k.Category.Id, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
     </div>
 
     <div style="margin-top:15px">
         <label>Kitap Yazar</label>
-        @Html.DropDownListFor(k => k.Author.Id, (List<SelectListItem>)ViewBag.dgr2, new { @class = "form-control" })
+        @Html.DropDownListFor(k => k.Author.Id, (List<SelectListItem>)ViewBag.dgr2, new { @class = "form-control" }) 
     </div>
+    <select>
+        <option placeholder>
+            
+        </option>
+    </select>
     <div style="margin-top:15px">
         <label>Basım Yılı</label>
         @Html.TextBoxFor(k => k.PrintYear, new { @class = "form-control" })
