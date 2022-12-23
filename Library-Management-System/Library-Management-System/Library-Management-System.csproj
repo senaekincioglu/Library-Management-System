@@ -141,6 +141,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoanedController.cs" />
     <Compile Include="Controllers\MemberController.cs" />
+    <Compile Include="Controllers\ProcessController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -180,8 +181,6 @@
     <Compile Include="Models\Entity\Punishment.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Entity\ReguiredAttribute.cs" />
-    <Compile Include="Models\Entity\requiredAttribute.cs" />
     <Compile Include="Models\Entity\sp_helpdiagramdefinition_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -269,6 +268,8 @@
     <Content Include="Views\Member\BringMember.cshtml" />
     <Content Include="Views\Loaned\LendMe.cshtml" />
     <Content Include="Views\Loaned\Index.cshtml" />
+    <Content Include="Views\Loaned\LoanReturn.cshtml" />
+    <Content Include="Views\Process\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
