@@ -75,6 +75,8 @@
           <Property Name="Employee_Id" Type="tinyint" />
           <Property Name="StartDate" Type="smalldatetime" />
           <Property Name="FinishDate" Type="smalldatetime" />
+          <Property Name="BringMemberDate" Type="smalldatetime" />
+          <Property Name="TransactionStatus" Type="bit" />
         </EntityType>
         <EntityType Name="Punishment">
           <Key>
@@ -269,7 +271,7 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="devrimme_senaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="devrimme_senaEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="devrimme_senaEntities1" annotation:LazyLoadingEnabled="true">
           <FunctionImport Name="sp_alterdiagram">
             <Parameter Name="diagramname" Mode="In" Type="String" />
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
@@ -317,6 +319,10 @@
             <End Role="Category" EntitySet="Category" />
             <End Role="Book" EntitySet="Book" />
           </AssociationSet>
+          <AssociationSet Name="FK_Movement_Book" Association="devrimme_senaModel.FK_Movement_Book">
+            <End Role="Book" EntitySet="Book" />
+            <End Role="Movement" EntitySet="Movement" />
+          </AssociationSet>
           <AssociationSet Name="FK_Movement_Employee" Association="devrimme_senaModel.FK_Movement_Employee">
             <End Role="Employee" EntitySet="Employee" />
             <End Role="Movement" EntitySet="Movement" />
@@ -336,10 +342,6 @@
           <AssociationSet Name="FK_Punishment_Movement" Association="devrimme_senaModel.FK_Punishment_Movement">
             <End Role="Movement" EntitySet="Movement" />
             <End Role="Punishment" EntitySet="Punishment" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Movement_Book" Association="devrimme_senaModel.FK_Movement_Book">
-            <End Role="Book" EntitySet="Book" />
-            <End Role="Movement" EntitySet="Movement" />
           </AssociationSet>
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
@@ -432,10 +434,12 @@
           <Property Name="Employee_Id" Type="Byte" />
           <Property Name="StartDate" Type="DateTime" Precision="0" />
           <Property Name="FinishDate" Type="DateTime" Precision="0" />
+          <Property Name="BringMemberDate" Type="DateTime" Precision="0" />
+          <Property Name="TransactionStatus" Type="Boolean" />
+          <NavigationProperty Name="Book" Relationship="devrimme_senaModel.FK_Movement_Book" FromRole="Movement" ToRole="Book" />
           <NavigationProperty Name="Employee" Relationship="devrimme_senaModel.FK_Movement_Employee" FromRole="Movement" ToRole="Employee" />
           <NavigationProperty Name="Member" Relationship="devrimme_senaModel.FK_Movement_Member" FromRole="Movement" ToRole="Member" />
           <NavigationProperty Name="Punishment" Relationship="devrimme_senaModel.FK_Punishment_Movement" FromRole="Movement" ToRole="Punishment" />
-          <NavigationProperty Name="Book" Relationship="devrimme_senaModel.FK_Movement_Book" FromRole="Movement" ToRole="Book" />
         </EntityType>
         <EntityType Name="Punishment">
           <Key>
@@ -480,6 +484,18 @@
             </Principal>
             <Dependent Role="Book">
               <PropertyRef Name="Category_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Movement_Book">
+          <End Type="devrimme_senaModel.Book" Role="Book" Multiplicity="0..1" />
+          <End Type="devrimme_senaModel.Movement" Role="Movement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Book">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Movement">
+              <PropertyRef Name="Book_Id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -543,24 +559,12 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Movement_Book">
-          <End Type="devrimme_senaModel.Book" Role="Book" Multiplicity="0..1" />
-          <End Type="devrimme_senaModel.Movement" Role="Movement" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Book">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Movement">
-              <PropertyRef Name="Book_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="devrimme_senaModelStoreContainer" CdmEntityContainer="devrimme_senaEntities">
+        <EntityContainerMapping StorageEntityContainer="devrimme_senaModelStoreContainer" CdmEntityContainer="devrimme_senaEntities1">
           <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="devrimme_senaModel.Store.sp_alterdiagram" />
           <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="devrimme_senaModel.Store.sp_creatediagram" />
           <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="devrimme_senaModel.Store.sp_dropdiagram" />
@@ -654,6 +658,8 @@
           <EntitySetMapping Name="Movement">
             <EntityTypeMapping TypeName="devrimme_senaModel.Movement">
               <MappingFragment StoreEntitySet="Movement">
+                <ScalarProperty Name="TransactionStatus" ColumnName="TransactionStatus" />
+                <ScalarProperty Name="BringMemberDate" ColumnName="BringMemberDate" />
                 <ScalarProperty Name="FinishDate" ColumnName="FinishDate" />
                 <ScalarProperty Name="StartDate" ColumnName="StartDate" />
                 <ScalarProperty Name="Employee_Id" ColumnName="Employee_Id" />

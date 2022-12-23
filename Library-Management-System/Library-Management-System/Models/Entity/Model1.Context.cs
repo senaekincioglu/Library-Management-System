@@ -15,10 +15,10 @@ namespace Library_Management_System.Models.Entity
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class devrimme_senaEntities : DbContext
+    public partial class devrimme_senaEntities1 : DbContext
     {
-        public devrimme_senaEntities()
-            : base("name=devrimme_senaEntities")
+        public devrimme_senaEntities1()
+            : base("name=devrimme_senaEntities1")
         {
         }
     
