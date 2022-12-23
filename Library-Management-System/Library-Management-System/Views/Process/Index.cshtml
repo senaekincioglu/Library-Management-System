@@ -1,0 +1,32 @@
+﻿@using Library_Management_System.Models.Entity
+@model List<Movement>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>İadesi Alınan Kitap Listesi</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>İşlem ID</th>
+        <th>Kitap Adı</th>
+        <th>Üye</th>
+        <th>Personel</th>
+        <th>Alış Tarihi</th>
+        <th>Üye İade Tarihi</th>
+        <th>Detaylar</th>
+    </tr>
+    @foreach (var k in Model)
+    {
+        <tr>
+            <td>@k.Id</td>
+            <td>@k.Book.Name</td>
+            <td>@k.Member.Name&nbsp @k.Member.Surname</td>
+            <td>@k.Employee.Employees</td>
+            <td>@Convert.ToDateTime(k.StartDate).ToString("dd/MM/yyyy")</td>
+            <td>@Convert.ToDateTime(k.BringMemberDate).ToString("dd/MM/yyyy")</td>
+            <td><a href="/Loaned/LoanReturn/@k.Id" class="btn btn-default" style="background-color:#f87cdf;color:white">Detaylar</a></td>
+        </tr>
+    }
+</table>
