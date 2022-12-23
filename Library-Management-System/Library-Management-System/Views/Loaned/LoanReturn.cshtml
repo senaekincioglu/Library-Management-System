@@ -1,0 +1,36 @@
+﻿@model Library_Management_System.Models.Entity.Movement
+@{
+    ViewBag.Title = "LoanReturn";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("LoanUpdate", "Loaned", FormMethod.Post))
+{
+    <div style="margin-bottom:15px"></div>
+    <div class="form-group">
+        <label>Hareket ID</label>
+        @Html.TextBoxFor(k => k.Id, new { @class = "form-control" })
+        <br />
+
+        <label>Kitap Adı</label>
+        @Html.TextBoxFor(k => k.Book.Name, new { @class = "form-control" })
+        <br />
+        <label>Üye</label>
+        @Html.TextBoxFor(k => k.Member.Name, new { @class = "form-control" })
+        <br />
+        <label>Personel</label>
+        @Html.TextBoxFor(k => k.Employee.Employees, new { @class = "form-control" })
+        <br />
+        <label>Alış Tarihi</label>
+        @Html.TextBoxFor(k => k.StartDate,"{0:dd.MM.yyyy}", new { @class = "form-control" })
+        <br />
+        <label>Normal İade Tarihi</label>
+        @Html.TextBoxFor(k => k.FinishDate, "{0:dd.MM.yyyy}", new { @class = "form-control" })
+        <br />
+        <label>Üyenin Getirdiği Tarih</label>
+        <input type="text" class="form-control" name="BringMemberDate" value="@DateTime.Now.ToShortDateString()" />
+    </div>
+    <div>
+        <button class="btn btn-group" style="background-color: #64d8ca; color: white">Ödünç Kitabı Geri Al</button>
+    </div>
+}
