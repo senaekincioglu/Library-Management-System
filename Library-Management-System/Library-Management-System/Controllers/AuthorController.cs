@@ -9,7 +9,7 @@ namespace Library_Management_System.Controllers
     public class AuthorController : Controller
     {
         // GET: Author
-        devrimme_senaEntities db = new devrimme_senaEntities();
+        devrimme_senaEntities1 db = new devrimme_senaEntities1();
         public ActionResult Index()
         {
             var degerler = db.Author.ToList();

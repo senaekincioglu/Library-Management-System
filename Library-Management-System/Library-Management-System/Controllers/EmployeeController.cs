@@ -8,7 +8,7 @@ namespace Library_Management_System.Controllers
 {
     public class EmployeeController : Controller
     {
-        devrimme_senaEntities db = new devrimme_senaEntities();
+        devrimme_senaEntities1 db = new devrimme_senaEntities1();
         // GET: Employee
         public ActionResult Index()
         {
