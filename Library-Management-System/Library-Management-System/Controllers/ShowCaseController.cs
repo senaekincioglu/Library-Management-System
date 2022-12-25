@@ -11,6 +11,7 @@ namespace Library_Management_System.Controllers
     {
         // GET: ShowCase
         devrimme_senaEntities1 db=new devrimme_senaEntities1();
+        [HttpGet]
         public ActionResult Index()
         {
             Class1 cs = new Class1();
@@ -18,6 +19,13 @@ namespace Library_Management_System.Controllers
             cs.Deger2=db.About.ToList();
             //var degerler = db.Book.ToList();
             return View(cs);
+        }
+        [HttpPost]
+        public ActionResult Index(Contact t)
+        {
+            db.Contact.Add(t);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }

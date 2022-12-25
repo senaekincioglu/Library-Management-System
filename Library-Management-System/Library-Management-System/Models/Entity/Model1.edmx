@@ -52,6 +52,16 @@
           <Property Name="Id" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="20" />
         </EntityType>
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Mail" Type="varchar" MaxLength="50" />
+          <Property Name="Subject" Type="varchar" MaxLength="50" />
+          <Property Name="Message" Type="varchar" MaxLength="1000" />
+        </EntityType>
         <EntityType Name="Employee">
           <Key>
             <PropertyRef Name="Id" />
@@ -238,6 +248,7 @@
           <EntitySet Name="Author" EntityType="Self.Author" Schema="devrimme_usersena" store:Type="Tables" />
           <EntitySet Name="Book" EntityType="Self.Book" Schema="devrimme_usersena" store:Type="Tables" />
           <EntitySet Name="Category" EntityType="Self.Category" Schema="devrimme_usersena" store:Type="Tables" />
+          <EntitySet Name="Contact" EntityType="Self.Contact" Schema="devrimme_usersena" store:Type="Tables" />
           <EntitySet Name="Employee" EntityType="Self.Employee" Schema="devrimme_usersena" store:Type="Tables" />
           <EntitySet Name="Member" EntityType="Self.Member" Schema="devrimme_usersena" store:Type="Tables" />
           <EntitySet Name="Movement" EntityType="Self.Movement" Schema="devrimme_usersena" store:Type="Tables" />
@@ -353,6 +364,7 @@
             <End Role="Punishment" EntitySet="Punishment" />
           </AssociationSet>
           <EntitySet Name="About" EntityType="devrimme_senaModel.About" />
+          <EntitySet Name="Contact" EntityType="devrimme_senaModel.Contact" />
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -577,6 +589,16 @@
           <Property Name="Id" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Explanation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Subject" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Message" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -713,6 +735,17 @@
             <EntityTypeMapping TypeName="devrimme_senaModel.About">
               <MappingFragment StoreEntitySet="About">
                 <ScalarProperty Name="Explanation" ColumnName="Explanation" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contact">
+            <EntityTypeMapping TypeName="devrimme_senaModel.Contact">
+              <MappingFragment StoreEntitySet="Contact">
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
