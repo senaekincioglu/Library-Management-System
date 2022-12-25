@@ -15,6 +15,13 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
+        <EntityType Name="About">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Explanation" Type="varchar(max)" />
+        </EntityType>
         <EntityType Name="Author">
           <Key>
             <PropertyRef Name="Id" />
@@ -227,6 +234,7 @@
         <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="devrimme_senaModelStoreContainer">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="About" EntityType="Self.About" Schema="devrimme_usersena" store:Type="Tables" />
           <EntitySet Name="Author" EntityType="Self.Author" Schema="devrimme_usersena" store:Type="Tables" />
           <EntitySet Name="Book" EntityType="Self.Book" Schema="devrimme_usersena" store:Type="Tables" />
           <EntitySet Name="Category" EntityType="Self.Category" Schema="devrimme_usersena" store:Type="Tables" />
@@ -344,6 +352,7 @@
             <End Role="Movement" EntitySet="Movement" />
             <End Role="Punishment" EntitySet="Punishment" />
           </AssociationSet>
+          <EntitySet Name="About" EntityType="devrimme_senaModel.About" />
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -561,6 +570,13 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="About">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Explanation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -689,6 +705,14 @@
               <MappingFragment StoreEntitySet="Till">
                 <ScalarProperty Name="Total" ColumnName="Total" />
                 <ScalarProperty Name="Month" ColumnName="Month" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="About">
+            <EntityTypeMapping TypeName="devrimme_senaModel.About">
+              <MappingFragment StoreEntitySet="About">
+                <ScalarProperty Name="Explanation" ColumnName="Explanation" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
