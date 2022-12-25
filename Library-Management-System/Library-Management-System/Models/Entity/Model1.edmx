@@ -36,6 +36,7 @@
           <Property Name="Publisher" Type="varchar" MaxLength="50" />
           <Property Name="Page" Type="varchar" MaxLength="4" />
           <Property Name="Status" Type="bit" />
+          <Property Name="BookPicture" Type="varchar" MaxLength="250" />
         </EntityType>
         <EntityType Name="Category">
           <Key>
@@ -390,6 +391,7 @@
           <NavigationProperty Name="Author" Relationship="devrimme_senaModel.FK_Book_Author" FromRole="Book" ToRole="Author" />
           <NavigationProperty Name="Category" Relationship="devrimme_senaModel.FK_Book_Category" FromRole="Book" ToRole="Category" />
           <NavigationProperty Name="Movement" Relationship="devrimme_senaModel.FK_Movement_Book" FromRole="Book" ToRole="Movement" />
+          <Property Name="BookPicture" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Category">
           <Key>
@@ -613,6 +615,7 @@
           <EntitySetMapping Name="Book">
             <EntityTypeMapping TypeName="devrimme_senaModel.Book">
               <MappingFragment StoreEntitySet="Book">
+                <ScalarProperty Name="BookPicture" ColumnName="BookPicture" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="Page" ColumnName="Page" />
                 <ScalarProperty Name="Publisher" ColumnName="Publisher" />

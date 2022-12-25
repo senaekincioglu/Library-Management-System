@@ -28,6 +28,7 @@ namespace Library_Management_System.Models.Entity
         public string Publisher { get; set; }
         public string Page { get; set; }
         public Nullable<bool> Status { get; set; }
+        public string BookPicture { get; set; }
     
         public virtual Author Author { get; set; }
         public virtual Category Category { get; set; }
