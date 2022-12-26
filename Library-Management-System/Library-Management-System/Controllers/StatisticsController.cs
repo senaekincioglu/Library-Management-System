@@ -13,5 +13,14 @@ namespace Library_Management_System.Controllers
         {
             return View();
         }
+        public ActionResult Weather()
+        {
+            return View();  
+        }
+        public ActionResult WeatherCard()
+        {
+            return View();  
+        }
+
     }
 }
