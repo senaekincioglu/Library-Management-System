@@ -23,7 +23,11 @@ namespace Library_Management_System.Controllers
         [HttpPost]
         public ActionResult AddAuthor(Author p) 
         { 
-            db.Author.Add(p);
+            if(!ModelState.IsValid)//eğer ki modelstate nin yani model üzerinde yapılmış olan geçerleme işlemi ünlemse yani false ise tekrar yazar ekle sayfasına geri döndürsün.
+            {
+                return View("AddAuthor"); 
+            }
+            db.Author.Add(p);//if geçerli değilse zaten burdaki işlemleri döndürür.
             db.SaveChanges();
             return RedirectToAction ("Index");
         }

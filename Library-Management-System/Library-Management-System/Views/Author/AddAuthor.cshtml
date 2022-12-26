@@ -11,10 +11,12 @@
     <div style="margin-top:15px">
         <label>Yazar Adı</label>
         @Html.TextBoxFor(y => y.Name, new { @class = "form-control" })@* inputta name kısmı yanlışlıkla giriliyor olabilir. o yüzden linq sorguları kullanılır ve böyle kullanılır. ve input type text yazmak yerine direkt textboxfor yazılması daha mantıklı ve daha yenidir.new yazılıp devamının gelmesi ise formun şeklinin daha güzel olması için.*@
+        @Html.ValidationMessageFor(y => y.Name)
     </div>
     <div style="margin-top:15px">
         <label>Yazar Soyadı</label>
         @Html.TextBoxFor(y => y.Surname, new { @class = "form-control" })
+        @Html.ValidationMessageFor(y => y.Surname)
     </div>
 
     <div style="margin-top:15px">
