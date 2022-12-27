@@ -21,6 +21,10 @@ namespace Library_Management_System.Controllers
         {
             return View();  
         }
+        public ActionResult Gallery()
+        {
+            return View();
+        }
 
     }
 }
