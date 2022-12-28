@@ -15,10 +15,10 @@ namespace Library_Management_System.Models.Entity
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class devrimme_senaEntities1 : DbContext
+    public partial class devrimme_senaEntities : DbContext
     {
-        public devrimme_senaEntities1()
-            : base("name=devrimme_senaEntities1")
+        public devrimme_senaEntities()
+            : base("name=devrimme_senaEntities")
         {
         }
     
@@ -28,16 +28,16 @@ namespace Library_Management_System.Models.Entity
         }
     
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<About> About { get; set; }
         public virtual DbSet<Author> Author { get; set; }
         public virtual DbSet<Book> Book { get; set; }
         public virtual DbSet<Category> Category { get; set; }
+        public virtual DbSet<Contact> Contact { get; set; }
         public virtual DbSet<Employee> Employee { get; set; }
         public virtual DbSet<Member> Member { get; set; }
         public virtual DbSet<Movement> Movement { get; set; }
         public virtual DbSet<Punishment> Punishment { get; set; }
         public virtual DbSet<Till> Till { get; set; }
-        public virtual DbSet<About> About { get; set; }
-        public virtual DbSet<Contact> Contact { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {

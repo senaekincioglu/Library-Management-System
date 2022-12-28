@@ -22,13 +22,18 @@
         @Html.TextBoxFor(k => k.Employee.Employees, new { @class = "form-control" })
         <br />
         <label>Alış Tarihi</label>
-        @Html.TextBoxFor(k => k.StartDate,"{0:dd.MM.yyyy}", new { @class = "form-control" })
+        @Html.TextBoxFor(k => k.StartDate, "{0:dd.MM.yyyy}", new { @class = "form-control" })
         <br />
         <label>Normal İade Tarihi</label>
         @Html.TextBoxFor(k => k.FinishDate, "{0:dd.MM.yyyy}", new { @class = "form-control" })
         <br />
         <label>Üyenin Getirdiği Tarih</label>
         <input type="text" class="form-control" name="BringMemberDate" value="@DateTime.Now.ToShortDateString()" />
+        <br />
+        <label>Geç Gelen Gün Sayısı</label>
+        <input type="text" class="form-control" id="Gecinput" value="0" />
+        <br>
+
     </div>
     <div>
         <button class="btn btn-group" style="background-color: #64d8ca; color: white">Ödünç Kitabı Geri Al</button>

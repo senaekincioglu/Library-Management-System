@@ -9,7 +9,7 @@ namespace Library_Management_System.Controllers
 {
     public class CategoryController : Controller
     {
-        devrimme_senaEntities1 db=new devrimme_senaEntities1();//bağlantı sağlanması için yazılır.
+        devrimme_senaEntities db=new devrimme_senaEntities();//bağlantı sağlanması için yazılır.
         // GET: Category
         public ActionResult Index()
         {

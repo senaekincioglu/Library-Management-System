@@ -10,7 +10,7 @@ namespace Library_Management_System.Controllers
     public class ProcessController : Controller
     {
         // GET: Process
-        devrimme_senaEntities1 db=new devrimme_senaEntities1();
+        devrimme_senaEntities db=new devrimme_senaEntities();
         public ActionResult Index()
         {
             var deger = db.Movement.Where(x => x.TransactionStatus == true).ToList();

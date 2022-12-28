@@ -11,7 +11,7 @@ namespace Library_Management_System.Controllers
 {
     public class MemberController : Controller
     {
-        devrimme_senaEntities1 db = new devrimme_senaEntities1();
+        devrimme_senaEntities db = new devrimme_senaEntities();
         // GET: Member
         public ActionResult Index(int sayfa = 1)
         {

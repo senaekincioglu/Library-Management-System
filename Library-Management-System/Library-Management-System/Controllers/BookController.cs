@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
-using System.Web;
+using System.Web;    
 using System.Web.Mvc;
 using System.Web.UI.WebControls;
 using System.Web.WebPages.Html;
@@ -14,7 +14,7 @@ namespace Library_Management_System.Controllers
 {
     public class BookController : Controller
     {
-        devrimme_senaEntities1 db = new devrimme_senaEntities1();
+        devrimme_senaEntities db = new devrimme_senaEntities();
        
         public ActionResult Index(string p)
 

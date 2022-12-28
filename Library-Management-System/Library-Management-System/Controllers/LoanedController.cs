@@ -9,7 +9,7 @@ namespace Library_Management_System.Controllers
     public class LoanedController : Controller
     {
         // GET: Loaned
-        devrimme_senaEntities1 db = new devrimme_senaEntities1();
+        devrimme_senaEntities db = new devrimme_senaEntities();
         public ActionResult Index()//kütüphaneden ödünç alınacak hareket tablosuna eklenecek.
         {
             var deger = db.Movement.Where(x => x.TransactionStatus == false).ToList();

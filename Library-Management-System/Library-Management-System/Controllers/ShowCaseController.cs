@@ -10,7 +10,7 @@ namespace Library_Management_System.Controllers
     public class ShowCaseController : Controller
     {
         // GET: ShowCase
-        devrimme_senaEntities1 db=new devrimme_senaEntities1();
+        devrimme_senaEntities db=new devrimme_senaEntities();
         [HttpGet]
         public ActionResult Index()
         {
