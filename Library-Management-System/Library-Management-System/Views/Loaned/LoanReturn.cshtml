@@ -31,11 +31,10 @@
         <input type="text" class="form-control" name="BringMemberDate" value="@DateTime.Now.ToShortDateString()" />
         <br />
         <label>Geç Gelen Gün Sayısı</label>
-        <input type="text" class="form-control" id="Gecinput" value="0" />
-        <br>
-
+        <input type="text" class="form-control" id="Gecinput" value="@ViewBag.dgr" />
     </div>
     <div>
         <button class="btn btn-group" style="background-color: #64d8ca; color: white">Ödünç Kitabı Geri Al</button>
+
     </div>
 }

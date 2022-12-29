@@ -18,8 +18,6 @@ namespace Library_Management_System.Models.Entity
         public Member()
         {
             this.Movement = new HashSet<Movement>();
-            this.Punishment = new HashSet<Punishment>();
-            this.Punishment1 = new HashSet<Punishment>();
         }
     
         public int Id { get; set; }
@@ -34,9 +32,5 @@ namespace Library_Management_System.Models.Entity
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Movement> Movement { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Punishment> Punishment { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Punishment> Punishment1 { get; set; }
     }
 }

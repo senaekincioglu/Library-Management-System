@@ -28,9 +28,13 @@ namespace Library_Management_System.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-        public ActionResult LoanReturn(int id)//kitabı iade et kısmıdır. index sayfasında kitabı iade et butonuna tıklandığında çalışacak kısımdır. ve normalde hareket tablosuna eklenmişti hareket tablosundan alacağın kitabın id sini tutar 
+        public ActionResult LoanReturn(Movement p )//kitabı iade et kısmıdır. index sayfasında kitabı iade et butonuna tıklandığında çalışacak kısımdır. ve normalde hareket tablosuna eklenmişti hareket tablosundan alacağın kitabın id sini tutar 
         {
-            var odn = db.Movement.Find(id);
+            var odn = db.Movement.Find(p.Id);
+            DateTime d1 = DateTime.Parse(odn.FinishDate.ToString());
+            DateTime d2=Convert.ToDateTime(DateTime.Now.ToShortDateString());
+            TimeSpan d3 = d2 - d1;
+            ViewBag.dgr = d3.TotalDays;
             return View("LoanReturn", odn);
         }
         public ActionResult LoanUpdate(Movement p)

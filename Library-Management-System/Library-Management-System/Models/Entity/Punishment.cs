@@ -21,8 +21,6 @@ namespace Library_Management_System.Models.Entity
         public Nullable<decimal> Money { get; set; }
         public Nullable<int> Movement_Id { get; set; }
     
-        public virtual Member Member { get; set; }
-        public virtual Member Member1 { get; set; }
         public virtual Movement Movement { get; set; }
     }
 }
