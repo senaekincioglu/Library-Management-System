@@ -140,8 +140,11 @@
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoanedController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MemberController.cs" />
+    <Compile Include="Controllers\MyPanelController.cs" />
     <Compile Include="Controllers\ProcessController.cs" />
+    <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\ShowCaseController.cs" />
     <Compile Include="Controllers\StatisticsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -226,6 +229,10 @@
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="WebPanel\assets\favicon.ico" />
+    <Content Include="WebPanel\css\styles.css" />
+    <Content Include="WebPanel\index.html" />
+    <Content Include="WebPanel\js\scripts.js" />
     <Content Include="web2\css\bootstrap.css" />
     <Content Include="web2\css\clndr.css" />
     <Content Include="web2\css\jqvmap.css" />
@@ -346,6 +353,20 @@
     <Content Include="webhava\js\jquery-2.1.4.min.js" />
     <Content Include="webhava\js\skycons.js" />
     <Content Include="webhava\w3layouts-License.txt" />
+    <Content Include="weblogin\css\fontawesome-all.css" />
+    <Content Include="weblogin\css\style.css" />
+    <Content Include="weblogin\images\cover4.jpg" />
+    <Content Include="weblogin\index.html" />
+    <Content Include="weblogin\w3layouts-License.txt" />
+    <Content Include="weblogin\webfonts\fa-brands-400.svg" />
+    <Content Include="weblogin\webfonts\fa-regular-400.svg" />
+    <Content Include="weblogin\webfonts\fa-solid-900.svg" />
+    <Content Include="webregister\css\font-awesome.css" />
+    <Content Include="webregister\css\style.css" />
+    <Content Include="webregister\fonts\fontawesome-webfont.svg" />
+    <Content Include="webregister\images\bg.jpg" />
+    <Content Include="webregister\index.html" />
+    <Content Include="webregister\w3layouts-License.txt" />
     <Content Include="web\.gitignore" />
     <Content Include="web\css\freelancer.css" />
     <Content Include="web\css\freelancer.min.css" />
@@ -502,6 +523,29 @@
     <Content Include="web3\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="web3\images\Thumbs.db" />
     <Content Include="web3\js\js" />
+    <Content Include="weblogin\webfonts\fa-brands-400.eot" />
+    <Content Include="weblogin\webfonts\fa-brands-400.ttf" />
+    <Content Include="weblogin\webfonts\fa-brands-400.woff" />
+    <Content Include="weblogin\webfonts\fa-brands-400.woff2" />
+    <Content Include="weblogin\webfonts\fa-regular-400.eot" />
+    <Content Include="weblogin\webfonts\fa-regular-400.ttf" />
+    <Content Include="weblogin\webfonts\fa-regular-400.woff" />
+    <Content Include="weblogin\webfonts\fa-regular-400.woff2" />
+    <Content Include="weblogin\webfonts\fa-solid-900.eot" />
+    <Content Include="weblogin\webfonts\fa-solid-900.ttf" />
+    <Content Include="weblogin\webfonts\fa-solid-900.woff" />
+    <Content Include="weblogin\webfonts\fa-solid-900.woff2" />
+    <Content Include="webregister\fonts\fontawesome-webfont.eot" />
+    <Content Include="webregister\fonts\fontawesome-webfont.ttf" />
+    <Content Include="webregister\fonts\fontawesome-webfont.woff" />
+    <Content Include="webregister\fonts\fontawesome-webfont.woff2" />
+    <Content Include="webregister\fonts\FontAwesome.otf" />
+    <Content Include="webregister\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="webregister\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Views\Login\LogIn.cshtml" />
+    <Content Include="Views\Register\Record.cshtml" />
+    <Content Include="Views\Shared\_LayoutMyPanel.cshtml" />
+    <Content Include="Views\MyPanel\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
