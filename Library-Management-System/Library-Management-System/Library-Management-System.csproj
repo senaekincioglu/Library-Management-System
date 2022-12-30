@@ -417,6 +417,7 @@
     <Content Include="Views\Statistics\Weather.cshtml" />
     <Content Include="Views\Statistics\WeatherCard.cshtml" />
     <Content Include="Views\Statistics\Gallery.cshtml" />
+    <Content Include="Views\Statistics\LinqCard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

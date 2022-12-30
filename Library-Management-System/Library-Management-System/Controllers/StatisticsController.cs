@@ -4,14 +4,24 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Library_Management_System.Models.Entity;
 
 namespace Library_Management_System.Controllers
 {
     public class StatisticsController : Controller
     {
+        devrimme_senaEntities db = new devrimme_senaEntities();
         // GET: Statistics
         public ActionResult Index()
         {
+            var deger1 = db.Member.Count();
+            var deger2 = db.Book.Count();
+            var deger3 = db.Book.Where(x => x.Status == false).Count();
+            var deger4 = db.Punishment.Sum(x => x.Money);
+            ViewBag.Dgr1 = deger1;
+            ViewBag.Dgr2 = deger2;
+            ViewBag.Dgr3 = deger3;
+            ViewBag.Dgr4 = deger4;
             return View();
         }
         public ActionResult Weather()
@@ -35,6 +45,10 @@ namespace Library_Management_System.Controllers
                 dosya.SaveAs(dosyayolu);
             }
             return RedirectToAction("Gallery");
+        }
+        public ActionResult LinqCard()
+        {
+            return View();
         }
 
     }
