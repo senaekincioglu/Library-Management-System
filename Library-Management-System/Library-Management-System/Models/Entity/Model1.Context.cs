@@ -141,5 +141,10 @@ namespace Library_Management_System.Models.Entity
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
         }
+    
+        public virtual ObjectResult<string> MostBookAuthors()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("MostBookAuthors");
+        }
     }
 }

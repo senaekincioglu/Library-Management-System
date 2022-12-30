@@ -218,6 +218,7 @@
           <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="MostBookAuthors" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="devrimme_usersena" />
         <EntityContainer Name="devrimme_senaModelStoreContainer">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="About" EntityType="Self.About" Schema="devrimme_usersena" store:Type="Tables" />
@@ -325,6 +326,7 @@
             <End Role="Movement" EntitySet="Movement" />
             <End Role="Punishment" EntitySet="Punishment" />
           </AssociationSet>
+          <FunctionImport Name="MostBookAuthors" ReturnType="Collection(String)" />
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -682,6 +684,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="MostBookAuthors" FunctionName="devrimme_senaModel.Store.MostBookAuthors" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
