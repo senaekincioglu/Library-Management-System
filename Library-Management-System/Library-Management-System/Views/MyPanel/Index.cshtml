@@ -4,5 +4,43 @@
     Layout = "~/Views/Shared/_LayoutMyPanel.cshtml";
 }
 
-<h2>Burası panel sayfam</h2>
+<h2>Kütüphane Üye Profil Bilgileri</h2>
+<table>
+    <tr>
+        <td>
+            Mail Adresi : @HttpContext.Current.User.Identity.Name
 
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Ad : @Session["Name"].ToString()
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Soyad :  @Session["Soyadi"].ToString()
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Kullanıcı Adı :  @Session["KullanıciAdi"].ToString()
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Şifre : <label style="font-weight:bolder">Şifre: </label> @Session["Şifre"].ToString()
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Okul :  @Session["Okulu"].ToString()
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button class="btn btn-warning">Şifre Güncelle</button>
+        </td>
+    </tr>
+</table>
+@* panel sayfasına mail taşıma işlemi *@

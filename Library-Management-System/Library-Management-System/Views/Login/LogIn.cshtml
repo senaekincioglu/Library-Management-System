@@ -38,20 +38,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <h1>Kütüphane Giriş Paneli</h1>
     <div class=" w3l-login-form">
         <h2>Login</h2>
-        <form action="/MyPanel/Index/" method="POST">
-
+       @using(Html.BeginForm("Login","LogIn",FormMethod.Post))
+       {
             <div class=" w3l-form-group">
                 <label>Kullanıcı Adı:</label>
                 <div class="group">
                     <i class="fas fa-user"></i>
-                    <input type="text" class="form-control" placeholder="kullanıcı adınız" required="required" />
+                    <input type="text" class="form-control" placeholder="kullanıcı adınız" required="required" name="Mail" />
                 </div>
             </div>
             <div class=" w3l-form-group">
                 <label>Şifre:</label>
                 <div class="group">
                     <i class="fas fa-unlock"></i>
-                    <input type="password" class="form-control" placeholder="şifreniz" required="required" />
+                    <input type="password" class="form-control" placeholder="şifreniz" required="required" name="Password" />
                 </div>
             </div>
             <div class="forgot">
@@ -59,7 +59,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <p><input type="checkbox"> Beni Hatırla</p>
             </div>
             <button type="submit">Giriş Yap</button>
-        </form>
+       }
         <p class=" w3l-register-p">Bir Hesabınız Yok mu?<a href="/Register/Record/" class="register"> Kayıt Ol</a></p>
         @* kayit ol controller da kayıt actionresult a gidecek. *@
     </div>

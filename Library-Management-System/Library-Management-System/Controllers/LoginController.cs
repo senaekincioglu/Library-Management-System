@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Library_Management_System.Models.Entity;
+using System.Web.Security;//bu kütüphane de yeni tanımlandı
 
 namespace Library_Management_System.Controllers
 {
@@ -11,21 +12,30 @@ namespace Library_Management_System.Controllers
     {
         // GET: Login
         devrimme_senaEntities db = new devrimme_senaEntities();
-        [HttpGet]
+       
         public ActionResult LogIn()
         {
             return View();
         }
         [HttpPost]
-        public ActionResult LogIn(Member p)
+        public ActionResult LogIn(Member p)//giriş işleminde kullanıcı adı ve şifreyi kontrol ediyor.
         {
-            if(!ModelState.IsValid)
+            var informations = db.Member.FirstOrDefault(x => x.Mail == p.Mail && x.Password == p.Password);
+            if (informations != null) //gelen değerler boş değilse
             {
-                return View("LogIn");
+                FormsAuthentication.SetAuthCookie(informations.Mail, false);
+                //login de giriş yaparken sql deki adı paneldeki ad a taşımak için viewbag gibi bu kullanılır.
+                Session["Name"] = informations.Name.ToString();
+                Session["Soyadi"] = informations.Surname.ToString();
+                Session["KullanıciAdi"] = informations.UserName.ToString();
+                Session["Şifre"] = informations.Password.ToString();
+                Session["Okulu"] = informations.School.ToString();
+                return RedirectToAction("Index", "MyPanel");
             }
-            db.Member.Add(p);
-            db.SaveChanges();
-            return View();
+            else
+            {
+                return View();
+            }
             
         }
     }
