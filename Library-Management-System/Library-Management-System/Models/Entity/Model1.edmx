@@ -83,6 +83,17 @@
           <Property Name="Telephone" Type="varchar" MaxLength="20" />
           <Property Name="School" Type="varchar" MaxLength="100" />
         </EntityType>
+        <EntityType Name="Message">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Sender" Type="varchar" MaxLength="50" />
+          <Property Name="Buyer" Type="varchar" MaxLength="50" />
+          <Property Name="Subject" Type="varchar" MaxLength="50" />
+          <Property Name="Contents" Type="varchar" MaxLength="500" />
+          <Property Name="Date" Type="smalldatetime" />
+        </EntityType>
         <EntityType Name="Movement">
           <Key>
             <PropertyRef Name="Id" />
@@ -228,6 +239,7 @@
           <EntitySet Name="Contact" EntityType="Self.Contact" Schema="devrimme_usersena" store:Type="Tables" />
           <EntitySet Name="Employee" EntityType="Self.Employee" Schema="devrimme_usersena" store:Type="Tables" />
           <EntitySet Name="Member" EntityType="Self.Member" Schema="devrimme_usersena" store:Type="Tables" />
+          <EntitySet Name="Message" EntityType="Self.Message" Schema="devrimme_usersena" store:Type="Tables" />
           <EntitySet Name="Movement" EntityType="Self.Movement" Schema="devrimme_usersena" store:Type="Tables" />
           <EntitySet Name="Punishment" EntityType="Self.Punishment" Schema="devrimme_usersena" store:Type="Tables" />
           <EntitySet Name="Till" EntityType="Self.Till" Schema="devrimme_usersena" store:Type="Tables" />
@@ -327,6 +339,7 @@
             <End Role="Punishment" EntitySet="Punishment" />
           </AssociationSet>
           <FunctionImport Name="MostBookAuthors" ReturnType="Collection(String)" />
+          <EntitySet Name="Message" EntityType="devrimme_senaModel.Message" />
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -533,6 +546,17 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Message">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Buyer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Subject" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Contents" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -685,6 +709,18 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="MostBookAuthors" FunctionName="devrimme_senaModel.Store.MostBookAuthors" />
+          <EntitySetMapping Name="Message">
+            <EntityTypeMapping TypeName="devrimme_senaModel.Message">
+              <MappingFragment StoreEntitySet="Message">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Contents" ColumnName="Contents" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="Buyer" ColumnName="Buyer" />
+                <ScalarProperty Name="Sender" ColumnName="Sender" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

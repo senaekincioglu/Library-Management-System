@@ -22,6 +22,7 @@
         <AssociationConnector Association="devrimme_senaModel.FK_Movement_Employee1" />
         <AssociationConnector Association="devrimme_senaModel.FK_Movement_Member" />
         <AssociationConnector Association="devrimme_senaModel.FK_Punishment_Movement1" />
+        <EntityTypeShape EntityType="devrimme_senaModel.Message" Width="1.5" PointX="10.375" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

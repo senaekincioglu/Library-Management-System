@@ -13,8 +13,10 @@
     </div>
     <div>
         <label>Personel Adı</label>
+        @Html.TextBoxFor(x=>x.Employees,new {@class="form-control"})
+        @Html.ValidationMessageFor(x=>x.Employees,"",new {@style="color:forestgreen"})
 
-        <input type="text" class="form-control" name="Employees" required />
+        @*<input type="text" class="form-control" name="Employees" required />*@
 
     </div>
     <div style="margin-top:15px">

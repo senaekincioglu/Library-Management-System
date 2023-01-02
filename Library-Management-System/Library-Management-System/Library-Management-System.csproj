@@ -142,6 +142,7 @@
     <Compile Include="Controllers\LoanedController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MemberController.cs" />
+    <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\MyPanelController.cs" />
     <Compile Include="Controllers\ProcessController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
@@ -169,6 +170,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity\Member.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\Message.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity\Model1.Context.cs">
@@ -546,6 +550,8 @@
     <Content Include="Views\Register\Record.cshtml" />
     <Content Include="Views\Shared\_LayoutMyPanel.cshtml" />
     <Content Include="Views\MyPanel\Index.cshtml" />
+    <Content Include="Views\Message\Index.cshtml" />
+    <Content Include="Views\Message\NewMessage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
