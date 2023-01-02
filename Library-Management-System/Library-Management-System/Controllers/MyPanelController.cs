@@ -35,7 +35,9 @@ namespace Library_Management_System.Controllers
         }
         public ActionResult MyBooks()
         {
-            var deger = db.Movement.Where(x => x.TransactionStatus == true).ToList();
+            var kullanici = (string)Session["Mail"];
+            var id = db.Member.Where(x => x.Mail == kullanici.ToString()).Select(z=>z.Id).FirstOrDefault();
+            var deger = db.Movement.Where(x => x.Member_Id == id).ToList();
             return View(deger); //durumu true olanları listele ve göster.
               
         }
