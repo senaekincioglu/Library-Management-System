@@ -61,6 +61,14 @@ namespace Library_Management_System.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult MemberBookHistory(int id)
+        {
+            var bookhistory = db.Movement.Where(x => x.Member_Id == id).ToList();//sadece o üyeye ait olanı alır id sine göre aldığı için.
+            var memberBook = db.Member.Where(y => y.Id == id).Select(z => z.Name + " " + z.Surname).FirstOrDefault();
+            ViewBag.u1 = memberBook;
+            return View(bookhistory);
+
+        }
     }
 
 }

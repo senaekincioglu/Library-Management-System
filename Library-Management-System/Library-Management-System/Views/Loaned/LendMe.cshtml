@@ -8,15 +8,18 @@
     <div></div>
     <div style="margin-top:15px">
         <label>Üye ID</label>
-        @Html.TextBoxFor(k => k.Member_Id, new { @class = "form-control" })@*inputta name kısmı mesela unutmuş olabiliyorsun burda otomatik geliyor inputtaki name olayı gibi burda k.memberıd oluyor. veri tabanında da işlem yapması içindir*@
+        @*@Html.TextBoxFor(k => k.Member_Id, new { @class = "form-control" }*@@*inputta name kısmı mesela unutmuş olabiliyorsun burda otomatik geliyor inputtaki name olayı gibi burda k.memberıd oluyor. veri tabanında da işlem yapması içindir*@
+        @Html.DropDownListFor(k => k.Member.Id, (List<SelectListItem>)ViewBag.dgr1, new {@class= "form-control" }) @*üyeleri dinamik yapı ile dropdown ile getiriyor.*@
     </div>
     <div style="margin-top:15px">
         <label>Kitap ID</label>
-        @Html.TextBoxFor(k => k.Book_Id, new { @class = "form-control" })
+        @*@Html.TextBoxFor(k => k.Book_Id, new { @class = "form-control" })*@
+        @Html.DropDownListFor(k => k.Book.Id, (List<SelectListItem>)ViewBag.dgr2, new { @class = "form-control" })
     </div>
     <div style="margin-top:15px">
         <label>Personel ID</label>
-        @Html.TextBoxFor(k => k.Employee_Id, new { @class = "form-control" })
+        @*@Html.TextBoxFor(k => k.Employee_Id, new { @class = "form-control" })*@
+        @Html.DropDownListFor(k => k.Employee.Id, (List<SelectListItem>)ViewBag.dgr3, new { @class = "form-control" })
     </div>
     <div style="margin-top:15px">
         <label>Kitap Alış Tarihi</label>

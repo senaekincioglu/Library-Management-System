@@ -18,12 +18,41 @@ namespace Library_Management_System.Controllers
         [HttpGet]
         public ActionResult LendMe()//kütüphaneden ödünç verilecek hareket tablosuna eklenecek.
         {
+            //üyeleri dinamik yapı ile dropdown ile getiriyor.
+            List<SelectListItem> deger1 = (from x in db.Member.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.Name+" "+x.Surname,
+                                               Value = x.Id.ToString()
+                                           }).ToList();
+            List<SelectListItem> deger2 = (from y in db.Book.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = y.Name,
+                                               Value = y.Id.ToString()
+                                           }).ToList();
+            List<SelectListItem> deger3 = (from z in db.Employee.ToList()
+                                          select new SelectListItem
+                                          {
+                                              Text = z.Employees,
+                                              Value = z.Id.ToString()
+                                          }).ToList();
+            ViewBag.dgr1=deger1;
+            ViewBag.dgr2 = deger2;
+            ViewBag.dgr3 = deger3;
+                                        
             return View();
         }
 
         [HttpPost]
         public ActionResult LendMe(Movement p)
         {
+            var d1 = db.Member.Where(x => x.Id == p.Member.Id).FirstOrDefault();
+            var d2 = db.Book.Where(y => y.Id == p.Book.Id).FirstOrDefault();
+            var d3 = db.Employee.Where(x => x.Id == p.Employee.Id).FirstOrDefault();
+            p.Member = d1;//buraya değer ataması oluyor.
+            p.Book = d2;
+            p.Employee = d3;
             db.Movement.Add(p);
             db.SaveChanges();
             return RedirectToAction("Index");

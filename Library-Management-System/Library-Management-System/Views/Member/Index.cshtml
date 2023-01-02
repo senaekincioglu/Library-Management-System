@@ -14,27 +14,21 @@
         <th>ÜYE ID</th>
         <th>ÜYE ADI</th>
         <th>ÜYE SOYADI</th>
-        <th>MAİL</th>
-        <th>KULLANICI ADI</th>
-        <th>ŞİFRESİ</th>
-        <th>TELEFON</th>
         <th>OKUL</th>
         <th>SİL</th>
         <th>GÜNCELLE</th>
+        <th>KİTAP GEÇMİŞİ</th>
     </tr>
     @foreach (var uye in Model)
     {
         <tr>
             <td>@uye.Id</td>
             <td>@uye.Name</td>
-            <td>@uye.Surname</td>
-            <td>@uye.Mail</td>
-            <td>@uye.UserName</td>
-            <td>@uye.Password</td>
-            <td>@uye.Telephone</td>
+            <td>@uye.Surname</td> 
             <td>@uye.School</td>
             <td><a href="/Member/DeleteMember/@uye.Id" class="btn btn-danger">Sil</a></td>
             <td><a href="/Member/BringMember/@uye.Id" class="btn btn-success">Güncelle</a></td>
+            <td><a href="/Member/MemberBookHistory/@uye.Id" class="btn btn-success" style="background-color:lightseagreen">Kitap Geçmişi</a></td>
         </tr>
     }
 </table>

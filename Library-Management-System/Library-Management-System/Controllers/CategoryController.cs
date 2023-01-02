@@ -14,7 +14,7 @@ namespace Library_Management_System.Controllers
         public ActionResult Index()
         {
 
-            var degerler = db.Category.ToList();
+            var degerler = db.Category.Where(x=>x.Status==true).ToList();
             return View(degerler);
         }
         [HttpGet]//refresh 
@@ -32,7 +32,8 @@ namespace Library_Management_System.Controllers
         public ActionResult DeleteCategory(int id) //parametre id olacak çünkü id ye göre silme işlemi gerçekleştirecek.
         {
             var category = db.Category.Find(id);//find bul demek.
-            db.Category.Remove(category); 
+            //db.Category.Remove(category); 
+            category.Status=false;//sadece id ye göre gelen durumu false yapıcak. eğer kitap false ise silecek.yani kitap sile basınca silinmeyecek false düşecek. sql de kontrol et false a düşüyor.
             db.SaveChanges();
             return RedirectToAction("Index");//BAŞKA SAYFAYA YÖNLENDİRİR.
         }
