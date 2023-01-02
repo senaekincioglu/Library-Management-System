@@ -25,7 +25,7 @@ namespace Library_Management_System.Controllers
                                                Text = x.Name+" "+x.Surname,
                                                Value = x.Id.ToString()
                                            }).ToList();
-            List<SelectListItem> deger2 = (from y in db.Book.ToList()
+            List<SelectListItem> deger2 = (from y in db.Book.Where(x=>x.Status==true).ToList()
                                            select new SelectListItem
                                            {
                                                Text = y.Name,

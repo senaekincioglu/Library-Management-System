@@ -1,0 +1,27 @@
+﻿@model Library_Management_System.Models.Entity.Announcements
+    @{ 
+    ViewBag.Title = "NewAnnouncement";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div></div>
+    <div style="margin-top:15px">
+
+    </div>
+    <div>
+        <label>Duyuru Kategorisi</label>
+        @Html.TextBoxFor(x => x.CategoryText, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Duyuru İçerik</label>
+        @Html.TextBoxFor(x => x.Contents, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Duyuru Tarih</label>
+        @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info" id="Btn1">Duyuru Ekle</button>
+    </div>
+</form>

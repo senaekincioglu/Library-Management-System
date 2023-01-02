@@ -38,8 +38,12 @@ namespace Library_Management_System.Controllers
             var kullanici = (string)Session["Mail"];
             var id = db.Member.Where(x => x.Mail == kullanici.ToString()).Select(z=>z.Id).FirstOrDefault();
             var deger = db.Movement.Where(x => x.Member_Id == id).ToList();
-            return View(deger); //durumu true olanları listele ve göster.
-              
+            return View(deger); //durumu true olanları listele ve göster.             
+        }
+        public ActionResult Announcements()
+        {
+            var announcementList=db.Announcements.ToList();
+            return View(announcementList);  
         }
     }
 }

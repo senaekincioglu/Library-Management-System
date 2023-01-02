@@ -29,16 +29,17 @@ namespace Library_Management_System.Models.Entity
     
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<About> About { get; set; }
+        public virtual DbSet<Announcements> Announcements { get; set; }
         public virtual DbSet<Author> Author { get; set; }
         public virtual DbSet<Book> Book { get; set; }
         public virtual DbSet<Category> Category { get; set; }
         public virtual DbSet<Contact> Contact { get; set; }
         public virtual DbSet<Employee> Employee { get; set; }
         public virtual DbSet<Member> Member { get; set; }
+        public virtual DbSet<Message> Message { get; set; }
         public virtual DbSet<Movement> Movement { get; set; }
         public virtual DbSet<Punishment> Punishment { get; set; }
         public virtual DbSet<Till> Till { get; set; }
-        public virtual DbSet<Message> Message { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {

@@ -1,0 +1,27 @@
+﻿@using Library_Management_System.Models.Entity
+@model List<Announcements>
+@{
+    ViewBag.Title = "Announcements";
+    Layout = "~/Views/Shared/_LayoutMyPanel.cshtml";
+}
+
+<h2>Duyurular</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Kategori</th>
+        <th>Tarih</th>
+        <th>İçerik</th>
+    </tr>
+    @foreach (var prs in Model)
+    {
+        <tr>
+            <td>@prs.CategoryText</td>
+            <td>@Convert.ToDateTime(prs.Date).ToString("dd/MM/yyyy")</td>
+            <td>@prs.Contents</td>
+            
+        </tr>
+    }
+</table>
+
+
