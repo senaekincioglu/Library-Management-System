@@ -33,5 +33,11 @@ namespace Library_Management_System.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult MyBooks()
+        {
+            var deger = db.Movement.Where(x => x.TransactionStatus == true).ToList();
+            return View(deger); //durumu true olanları listele ve göster.
+              
+        }
     }
 }

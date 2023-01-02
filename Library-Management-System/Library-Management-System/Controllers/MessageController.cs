@@ -17,6 +17,14 @@ namespace Library_Management_System.Controllers
             var message = db.Message.Where(x=>x.Buyer==membermail.ToString()).ToList();//listelesin ama gelen mesajları.
             return View(message);
         }
+        public ActionResult Outgoing()
+        {
+            //maile gelen sadece gelen mesajları görüntülesin ve listelesin dediği için bu aşağıdakiler kullanılır.
+            var membermail = (string)Session["Mail"].ToString();//maile gelenler yani mail kısmına.
+            var message = db.Message.Where(x => x.Sender == membermail.ToString()).ToList();//listelesin ama gelen mesajları.
+            return View(message);
+        }
+
         [HttpGet]
         public ActionResult NewMessage()
         {
@@ -30,7 +38,7 @@ namespace Library_Management_System.Controllers
             t.Date=DateTime.Parse(DateTime.Now.ToShortDateString());
             db.Message.Add(t);
             db.SaveChanges();
-            return View();
+            return RedirectToAction("Outgoing", "Message");
         }
     }
 }

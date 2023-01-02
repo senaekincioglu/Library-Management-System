@@ -552,6 +552,8 @@
     <Content Include="Views\MyPanel\Index.cshtml" />
     <Content Include="Views\Message\Index.cshtml" />
     <Content Include="Views\Message\NewMessage.cshtml" />
+    <Content Include="Views\Message\Outgoing.cshtml" />
+    <Content Include="Views\MyPanel\MyBooks.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
