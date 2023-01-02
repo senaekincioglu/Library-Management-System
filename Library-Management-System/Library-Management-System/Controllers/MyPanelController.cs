@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using System.Web.Security;
 
 namespace Library_Management_System.Controllers
 {
@@ -44,6 +44,11 @@ namespace Library_Management_System.Controllers
         {
             var announcementList=db.Announcements.ToList();
             return View(announcementList);  
+        }
+        public ActionResult LogOut()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("LogIn", "Login");
         }
     }
 }
