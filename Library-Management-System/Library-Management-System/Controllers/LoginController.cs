@@ -8,6 +8,7 @@ using System.Web.Security;//bu kütüphane de yeni tanımlandı
 
 namespace Library_Management_System.Controllers
 {
+    [AllowAnonymous]//bu komutla global daki yaptığın işlem ile birlikte giriş yapma işlemi muaf tutulacak.
     public class LoginController : Controller
     {
         // GET: Login

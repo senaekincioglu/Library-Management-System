@@ -12,6 +12,7 @@ namespace Library_Management_System
     {
         protected void Application_Start()
         {
+            GlobalFilters.Filters.Add(new AuthorizeAttribute());//eğer sisteme girilmediyse hiçbir sayfaya girmeyecek.
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
