@@ -36,9 +36,13 @@
             <label>Sayfa Sayısı</label>
             @Html.TextBoxFor(k => k.Page, new { @class = "form-control" })
         </div>
+        <div style="margin-bottom:15px">
+            <label>Kitap Görsel</label>
+            @Html.TextBoxFor(k => k.BookPicture, new { @class = "form-control" })
+        </div>
 
         <button class="btn btn-warning">Yazar Bilgilerini Güncelle</button>
-       
+
     </div>
 }
 

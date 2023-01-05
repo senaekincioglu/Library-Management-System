@@ -7,9 +7,11 @@ using Library_Management_System.Models.Entity;
 
 namespace Library_Management_System.Controllers
 {
+    [AllowAnonymous]
     public class RegisterController : Controller
     {
         // GET: Register
+        
         devrimme_senaEntities db = new devrimme_senaEntities();
         [HttpGet]
         public ActionResult Record()

@@ -100,6 +100,7 @@ namespace Library_Management_System.Controllers
             var yzr = db.Author.Where(y => y.Id == p.Author.Id).FirstOrDefault();
             kitap.Category_Id = ktg.Id;
             kitap.Author_Id = yzr.Id;
+            kitap.BookPicture = p.BookPicture;
             db.SaveChanges();
             return RedirectToAction("Index");
 

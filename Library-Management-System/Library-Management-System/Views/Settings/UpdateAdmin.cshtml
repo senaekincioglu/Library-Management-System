@@ -1,0 +1,29 @@
+﻿@model Library_Management_System.Models.Entity.Admin
+@{
+    ViewBag.Title = "UpdateAdmin";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+@using (Html.BeginForm("UpdateAdmin", "Settings", FormMethod.Post))
+{
+    <div style="margin-bottom:15px"></div>
+    <div class="form-group">
+        @Html.LabelFor(k => k.Id)
+        @Html.TextBoxFor(k => k.Id, new { @class = "form-control" })
+        <br />
+
+        <label>KULLANICI ADI</label>
+        @Html.TextBoxFor(k => k.UserName, new { @class = "form-control" })
+        <br />
+
+        <label>ŞİFRE</label>
+        @Html.TextBoxFor(k => k.Password, new { @class = "form-control" })
+        <br />
+
+        <label>YETKİ</label>
+        @Html.TextBoxFor(k => k.Authority, new { @class = "form-control" })
+    </div>
+    <div>
+        <button class="btn btn-warning">Güncelle</button>
+    </div>
+}
+

@@ -204,7 +204,7 @@
 
 
 
-                            <p class="text-muted"@ViewBag.d7</p>
+                            <p class="text-muted">@ViewBag.d7</p>
 
                         </div>
 
@@ -246,10 +246,11 @@
 
                                 @Html.Partial("Partial1")
 
+
                                 </div>
                                 <div class="tab-pane" id="settings">
 
-                                  ayarlar
+                                  @Html.Action("Partial2","MyPanel")
 
                                 </div>
 

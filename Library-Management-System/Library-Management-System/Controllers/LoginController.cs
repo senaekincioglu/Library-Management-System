@@ -27,12 +27,6 @@ namespace Library_Management_System.Controllers
                 FormsAuthentication.SetAuthCookie(informations.Mail, false);
                 //login de giriş yaparken sql deki adı paneldeki ad a taşımak için viewbag gibi bu kullanılır.
                 Session["Mail"]=informations.Mail.ToString();
-                //TempData["idd"] = informations.Id.ToString();
-                //TempData["Name"] = informations.Name.ToString();
-                //TempData["Soyadi"] = informations.Surname.ToString();
-                //TempData["KullanıciAdi"] = informations.UserName.ToString();
-                //TempData["Şifre"] = informations.Password.ToString();
-                //TempData["Okulu"] = informations.School.ToString();
                 return RedirectToAction("Index", "MyPanel");
             }
             else

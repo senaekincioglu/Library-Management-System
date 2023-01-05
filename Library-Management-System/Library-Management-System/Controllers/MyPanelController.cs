@@ -43,12 +43,6 @@ namespace Library_Management_System.Controllers
             var d10 = db.Announcements.Count();
             ViewBag.d10 = d10;
 
-
-
-
-
-
-
             return View(degerler);
         }
         [HttpPost]
@@ -85,6 +79,13 @@ namespace Library_Management_System.Controllers
         public PartialViewResult Partial1()//parçalı view kullanıyor. Duyurular kısmını ayrı ayrı çekmek için.
         {
             return PartialView();
+        }
+        public PartialViewResult Partial2()
+        {
+            var kullanici = (string)Session["Mail"];
+            var id = db.Member.Where(x => x.Mail == kullanici).Select(y => y.Id).FirstOrDefault();
+            var findmember = db.Member.Find(id);
+            return PartialView("Partial2",findmember);
         }
     }
 }

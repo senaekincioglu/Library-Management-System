@@ -134,11 +134,14 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminLoginController.cs" />
     <Compile Include="Controllers\AnnouncementController.cs" />
     <Compile Include="Controllers\AuthorController.cs" />
     <Compile Include="Controllers\BookController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\GraphicController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoanedController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -147,12 +150,17 @@
     <Compile Include="Controllers\MyPanelController.cs" />
     <Compile Include="Controllers\ProcessController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
+    <Compile Include="Controllers\SettingsController.cs" />
     <Compile Include="Controllers\ShowCaseController.cs" />
     <Compile Include="Controllers\StatisticsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Class1.cs" />
     <Compile Include="Models\Entity\About.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\Admin.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity\Announcements.cs">
@@ -213,6 +221,7 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\MyClasses\Class1.cs" />
+    <Compile Include="Models\Roles\AdminRoleProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -2071,6 +2080,18 @@
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="startbootstrap-simple-sidebar-gh-pages\assets\favicon.ico" />
+    <Content Include="startbootstrap-simple-sidebar-gh-pages\css\styles.css" />
+    <Content Include="startbootstrap-simple-sidebar-gh-pages\index.html" />
+    <Content Include="startbootstrap-simple-sidebar-gh-pages\js\scripts.js" />
+    <Content Include="weberror\css\font-awesome.min.css" />
+    <Content Include="weberror\css\popuo-box.css" />
+    <Content Include="weberror\css\style.css" />
+    <Content Include="weberror\images\b8.jpg" />
+    <Content Include="weberror\index.html" />
+    <Content Include="weberror\js\jquery-2.2.3.min.js" />
+    <Content Include="weberror\js\jquery.magnific-popup.js" />
+    <Content Include="weberror\w3layouts-License.txt" />
     <Content Include="WebPanel\assets\favicon.ico" />
     <Content Include="WebPanel\css\styles.css" />
     <Content Include="WebPanel\index.html" />
@@ -2654,6 +2675,19 @@
     <Content Include="Views\Announcement\AnnouncementDetail.cshtml" />
     <Content Include="Views\MyPanel\Announcements.cshtml" />
     <Content Include="Views\MyPanel\Partial1.cshtml" />
+    <Content Include="Views\MyPanel\Partial2.cshtml" />
+    <Content Include="Views\Message\Partial1.cshtml" />
+    <Content Include="Views\AdminLogin\Login.cshtml" />
+    <Content Include="Views\Graphic\Index.cshtml" />
+    <Content Include="Views\Error\Page404.cshtml" />
+    <Content Include="weberror\fonts\fontawesome-webfont.eot" />
+    <Content Include="weberror\fonts\fontawesome-webfont.ttf" />
+    <Content Include="weberror\fonts\fontawesome-webfont.woff" />
+    <Content Include="weberror\fonts\fontawesome-webfont.woff2" />
+    <Content Include="weberror\fonts\FontAwesome.otf" />
+    <Content Include="Views\Settings\Index.cshtml" />
+    <Content Include="Views\Settings\Index2.cshtml" />
+    <Content Include="Views\Settings\UpdateAdmin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

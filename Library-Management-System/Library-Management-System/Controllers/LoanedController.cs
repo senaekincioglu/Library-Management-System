@@ -10,6 +10,7 @@ namespace Library_Management_System.Controllers
     {
         // GET: Loaned
         devrimme_senaEntities db = new devrimme_senaEntities();
+        [Authorize(Roles ="A")]
         public ActionResult Index()//kütüphaneden ödünç alınacak hareket tablosuna eklenecek.
         {
             var deger = db.Movement.Where(x => x.TransactionStatus == false).ToList();

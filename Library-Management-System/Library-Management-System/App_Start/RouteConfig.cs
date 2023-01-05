@@ -16,7 +16,7 @@ namespace Library_Management_System
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Category", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "ShowCase", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

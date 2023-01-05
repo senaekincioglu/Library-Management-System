@@ -40,6 +40,7 @@ namespace Library_Management_System.Models.Entity
         public virtual DbSet<Movement> Movement { get; set; }
         public virtual DbSet<Punishment> Punishment { get; set; }
         public virtual DbSet<Till> Till { get; set; }
+        public virtual DbSet<Admin> Admin { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {

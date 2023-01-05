@@ -40,5 +40,14 @@ namespace Library_Management_System.Controllers
             db.SaveChanges();
             return RedirectToAction("Outgoing", "Message");
         }
+        public PartialViewResult Partial1()
+        {
+            var membermail = (string)Session["Mail"].ToString();
+            var numberofArrivals = db.Message.Where(x => x.Buyer == membermail).Count();
+            ViewBag.d1=numberofArrivals;
+            var numberofOutgoing = db.Message.Where(x => x.Sender == membermail).Count();
+            ViewBag.d2 = numberofOutgoing;
+            return PartialView();
+        }
     }
 }

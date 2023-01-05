@@ -68,8 +68,12 @@
         <a href="/Author/Index/"><i class="glyphicon glyphicon-pencil"></i> Yazarlar</a>
         <a href="/Member/Index/"><i class="glyphicon glyphicon-user"></i> Üyeler</a>
         <a href="/Employee/Index/"><i class="glyphicon glyphicon-tower"></i> Personeller</a>
-        <a href="/Loaned/LendMe/"><i class="	glyphicon glyphicon-circle-arrow-right"></i> Ödünç Kitap Ver</a>
-        <a href="/Loaned/Index/"><i class="	glyphicon glyphicon-circle-arrow-left"></i> Ödünç Kitap Al</a>
+        @if (User.IsInRole("A"))
+        {
+            <a href="/Loaned/LendMe/"><i class="	glyphicon glyphicon-circle-arrow-right"></i> Ödünç Kitap Ver</a>
+            <a href="/Loaned/Index/"><i class="	glyphicon glyphicon-circle-arrow-left"></i> Ödünç Kitap Al</a>
+        }
+
         <a href="/Statistics/Index/"><i class="glyphicon glyphicon-sort"></i> İstatistikler</a>
         <a href="/Announcement/Index/"><i class="glyphicon glyphicon-earphone"></i> Duyurular</a>
         <a href="/Process/Index/"><i class="glyphicon glyphicon-dashboard"></i> İşlemler</a>
@@ -78,16 +82,16 @@
         <a href="/Statistics/Gallery/"><i class="glyphicon glyphicon-picture"></i> Galeri</a>
         <a href="/Statistics/LinqCard/"><i class="glyphicon glyphicon-bookmark"></i>Linq Kartlar</a>
         <a href="/ShowCase/Index/"><i class="glyphicon glyphicon-gift"></i> Vitrin</a>
-        <a href="#home"><i class="glyphicon glyphicon-cog"></i> Ayarlar</a>
-        <a href="#home"><i class="glyphicon glyphicon-phone"></i> Yardım</a>
-        <a href="#home"><i class="glyphicon glyphicon-remove-sign"></i> Çıkış</a>
+        <a href="/Graphic/Index/"><i class="glyphicon glyphicon-console"></i> Grafikler</a>
+        <a href="/Settings/Index2/"><i class="glyphicon glyphicon-cog"></i> Ayarlar</a>
+        <a href="/MyPanel/LogOut/"><i class="glyphicon glyphicon-remove-sign"></i> Çıkış</a>
 
     </div>
 
     <div class="main">
         @RenderBody()
-    @*sayfa içerisindeki değişen kısım*@
+        @*sayfa içerisindeki değişen kısım*@
     </div>
- 
+
 </body>
 </html>

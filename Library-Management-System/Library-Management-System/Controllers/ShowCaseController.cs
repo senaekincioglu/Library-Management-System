@@ -7,6 +7,7 @@ using Library_Management_System.Models.Entity;
 using Library_Management_System.Models.MyClasses;
 namespace Library_Management_System.Controllers
 {
+    [AllowAnonymous]
     public class ShowCaseController : Controller
     {
         // GET: ShowCase
