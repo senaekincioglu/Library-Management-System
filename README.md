@@ -7,10 +7,29 @@ I would like to thank <a href="https://github.com/devrimmehmet">Devrim Mehmet Pa
 
 <a href="http://sena.devrimmehmet.com/">for Live Project</a> 
 
+## ShowCase
+
 ![s](https://raw.githubusercontent.com/senaekincioglu/Library-Management-System/Main/Documentation/Images/1.PNG)
+
+## ShowCase
+
+![s](https://raw.githubusercontent.com/senaekincioglu/Library-Management-System/Main/Documentation/Images/6.PNG)
+
+## User Login Panel
 
 ![s](https://raw.githubusercontent.com/senaekincioglu/Library-Management-System/Main/Documentation/Images/2.PNG)
 
+## User Panel
+
+![s](https://raw.githubusercontent.com/senaekincioglu/Library-Management-System/Main/Documentation/Images/5.PNG)
+
+## Admin Login Panel
+
+![s](https://raw.githubusercontent.com/senaekincioglu/Library-Management-System/Main/Documentation/Images/3.PNG)
+
+## Admin Panel
+
+![s](https://raw.githubusercontent.com/senaekincioglu/Library-Management-System/Main/Documentation/Images/4.PNG)
 
 # Library-Management-System
 Kütüphane Yönetim Sistemi <a href="https://github.com/MuratYucedag">Murat Yücedağ</a>'ın <a href="https://www.udemy.com/course/mvc5-ile-3-panelli-kutuphane-yonetim-sistemi/">Mvc5 ile 3 Panelli Kütüphane Yönetim Sistemi Eğitimi</a> temel alınarak kodlanmıştır.
