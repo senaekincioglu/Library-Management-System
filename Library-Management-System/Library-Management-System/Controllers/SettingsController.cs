@@ -45,7 +45,7 @@ namespace Library_Management_System.Controllers
         public ActionResult UpdateAdmin(int id)
         {
             var admin = db.Admin.Find(id);
-            return View("UpdateAdmin","Index");
+            return View("UpdateAdmin", admin);
         }
         [HttpPost]
         public ActionResult UpdateAdmin(Admin p)
